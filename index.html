@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrevannet</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1a14;
+      --surface: #162010;
+      --surface2: #1d2b1a;
+      --border: #2e4028;
+      --accent: #5a8f4a;
+      --accent-light: #7ab868;
+      --text: #d6e8cf;
+      --text-muted: #7a9970;
+      --heading: #e8f5e1;
+      --link: #7ab868;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 54px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent-light);
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--accent-light); border-bottom-color: var(--accent-light); }
+
+    header {
+      background: linear-gradient(160deg, #162b1a 0%, #0f1f13 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--heading);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      color: var(--heading);
+      font-weight: 600;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      color: var(--accent-light);
+      font-weight: 600;
+      margin: 1.8rem 0 0.6rem;
+    }
+
+    p { margin-bottom: 1rem; }
+
+    ul {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      padding: 0.25rem 0 0.25rem 1.2rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    ul li strong { color: var(--heading); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.93rem;
+    }
+
+    th {
+      background: var(--surface2);
+      color: var(--accent-light);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      padding: 0.55rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    td strong { color: var(--heading); }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.5rem 0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-link {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.55rem 1.3rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta-link:hover { background: var(--accent-light); text-decoration: none; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Borrevannet</a>
+  <a href="index.html" class="active">Om vannet</a>
+  <a href="gjeddefiske.html">Gjeddefiske &amp; festival</a>
+</nav>
+
+<header>
+  <h1>Borrevannet</h1>
+  <p>Naturreservat i Horten — ett av Norges beste gjeddevann og et unikt rekreasjonsområde</p>
+</header>
+
+<main>
+
+  <h2>Om vannet</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Beliggenhet:</strong> 1 km fra Horten sentrum, ca. 5 km nord for Borrestranda</li>
+      <li><strong>Areal:</strong> ca. 2 km² (1,77 km²)</li>
+      <li><strong>Lengde:</strong> 4,5 km, bredde ca. 830 m</li>
+      <li><strong>Gjennomsnittsdybde:</strong> 7,1 m — maks 15–16 m</li>
+      <li><strong>Høyde over havet:</strong> 9 moh</li>
+      <li><strong>Status:</strong> Naturreservat — særlig hensyn til fuglelivet</li>
+      <li><strong>Vanntype:</strong> Eutrof (næringsrikt) lavlandsvatn — klassisk gjeddevann</li>
+      <li><strong>Fiskekort:</strong> <a href="https://www.inatur.no/fiske/5d1a0a935c918000032b3aa1" target="_blank">inatur.no</a></li>
+      <li><strong>Dybdekart:</strong> <a href="http://www.dybdekart.no/Map/View/3723" target="_blank">dybdekart.no</a></li>
+    </ul>
+  </div>
+
+  <h2>Fiskearter</h2>
+  <table>
+    <thead>
+      <tr><th>Art</th><th>Kommentar</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Gjedde</strong></td><td>Rekord 18 kg — 1 meter-gjedder er vanlig</td></tr>
+      <tr><td><strong>Abbor</strong></td><td>Rekord 2 375 g (Alf Bjørn, Rapala wobbler)</td></tr>
+      <tr><td>Sørv</td><td></td></tr>
+      <tr><td>Brasme</td><td></td></tr>
+      <tr><td>Id</td><td></td></tr>
+      <tr><td>Suter</td><td></td></tr>
+      <tr><td>Lake</td><td></td></tr>
+      <tr><td>Gjørs</td><td>Fredet</td></tr>
+      <tr><td>Ål</td><td>Fredet</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Beste steder å fiske</h2>
+  <ul>
+    <li><strong>Østsiden</strong> — bekreftet av lokale som det mest produktive området</li>
+    <li><strong>Sørenden (Vassbann)</strong> — god gjeddeholding, grunt og sivtett</li>
+    <li><strong>Dypene (10–15 m)</strong> — de aller største gjeddene, vises på ekkolodd langs bakkekantene</li>
+    <li><strong>Krever båt</strong> for tilgang til de beste plassene — sivvegetasjonen er for tett fra land</li>
+  </ul>
+
+  <h2>Regler</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Kvote:</strong> maks 2 gjedder per fisker per dag</li>
+      <li><strong>Fang og slipp:</strong> all gjedde over 80 cm skal slippes</li>
+      <li><strong>Motorer:</strong> FORBUDT — inkl. elektrisk motor (naturreservat, fuglevern)</li>
+      <li><strong>Båt:</strong> må ha tillatelse fra grunneier; båten må merkes med registreringsnummer</li>
+      <li><strong>Fiskekort:</strong> obligatorisk for alle over 16 år — kjøpes via inatur.no</li>
+      <li><strong>Barn under 16:</strong> fisker gratis</li>
+      <li><strong>Fangstrapport:</strong> skal leveres etter fisket</li>
+    </ul>
+  </div>
+
+  <h2>Borrestranda og omgivelsene</h2>
+  <p>Borre-området byr på mer enn bare fiske. Rett ved vannet finner du:</p>
+  <ul>
+    <li><strong>Borrestranda</strong> — sandbunn, grunt og barnvennlig, molo og kiosk</li>
+    <li><strong>Borreparken</strong> — rekreasjonsområde med grillplasser og lek</li>
+    <li><strong>Borrehaugene</strong> — 50+ gravhauger fra 600–1000 e.Kr., ett av Norges største vikingtidsanlegg</li>
+    <li><strong>Midgard Vikingsenter</strong> — museum med vikinggjenstander og arrangementer</li>
+    <li><strong>Kyststien</strong> — går gjennom området mellom Horten og Åsgårdstrand</li>
+  </ul>
+
+  <h2>Overnatting</h2>
+  <ul>
+    <li><strong>Borrevannshyttene</strong> (inatur.no) — overnatting rett ved vannet, robåt/kano inkludert</li>
+    <li><strong>Skogvokterhytta</strong> (inatur.no) — alternativt overnattingstilbud i naturreservatet</li>
+  </ul>
+
+  <a href="gjeddefiske.html" class="cta-link">Se gjeddefiske-tips og festival →</a>
+
+</main>
+
+<footer>
+  Borrevannet, Horten — Vestfold
+</footer>
+
+</body>
+</html>
