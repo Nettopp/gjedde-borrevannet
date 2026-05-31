@@ -234,7 +234,35 @@
       font-size: 0.82rem;
       border-top: 1px solid var(--border);
     }
+    .weather-widget {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.4rem 1.2rem;
+      margin-top: 0.8rem;
+    }
+    .wx-loading, .wx-error {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-style: italic;
+      padding: 0.4rem 0;
+    }
+    .wx-section { margin-bottom: 10px; }
+    .wx-section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .wx-source {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      text-align: right;
+    }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -312,6 +340,23 @@
       <tr><td>Lørdag</td><td>Nesten vindstille, sol, ca. 20 °C</td></tr>
     </tbody>
   </table>
+
+  <h3>Timevis vær — 30.–31. mai</h3>
+  <div class="weather-widget">
+    <p class="wx-loading" id="wx-loading">Henter historiske værdata fra Borrevannet…</p>
+    <p class="wx-error" id="wx-error" style="display:none"></p>
+    <div id="wx-content" style="display:none">
+      <div class="wx-section">
+        <div class="wx-section-label">Temperatur &amp; skydekke</div>
+        <div style="height:150px;position:relative"><canvas id="wx-temp"></canvas></div>
+      </div>
+      <div class="wx-section">
+        <div class="wx-section-label">Vind &amp; nedbør</div>
+        <div style="height:100px;position:relative"><canvas id="wx-wind"></canvas></div>
+      </div>
+      <p class="wx-source">Kilde: Open-Meteo / ERA5 · Borrevannet, Horten</p>
+    </div>
+  </div>
 
   <h3>Meyer</h3>
   <table>
@@ -472,6 +517,183 @@
 <footer>
   Borrevannet, Horten — Vestfold
 </footer>
+
+<script>
+(function () {
+  const LAT = 59.4119, LON = 10.4677;
+  const GRID = 'rgba(46,64,40,0.55)', MUTED = '#7a9970', FG = '#d6e8cf';
+
+  const tooltipDefaults = {
+    backgroundColor: '#1d2b1a',
+    borderColor: '#2e4028',
+    borderWidth: 1,
+    titleColor: '#e8f5e1',
+    bodyColor: FG,
+    padding: 8,
+  };
+
+  function dayLabel(t) {
+    const d = new Date(t);
+    const days = ['sø','ma','ti','on','to','fr','lø'];
+    return days[d.getDay()] + ' ' + String(d.getHours()).padStart(2, '0') + ':00';
+  }
+
+  async function loadWeather() {
+    const url = 'https://archive-api.open-meteo.com/v1/archive' +
+      '?latitude=' + LAT + '&longitude=' + LON +
+      '&start_date=2026-05-30&end_date=2026-05-31' +
+      '&hourly=temperature_2m,precipitation,windspeed_10m,cloudcover' +
+      '&timezone=Europe%2FOslo&wind_speed_unit=ms';
+
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    if (data.error) throw new Error(data.reason || 'API-feil');
+    return data;
+  }
+
+  function buildCharts(data) {
+    const h = data.hourly;
+    const idx = h.time
+      .map((t, i) => i)
+      .filter(i => h.time[i] >= '2026-05-30T08:00' && h.time[i] <= '2026-05-31T16:00');
+
+    const labels = idx.map(i => dayLabel(h.time[i]));
+    const temp   = idx.map(i => h.temperature_2m[i]);
+    const wind   = idx.map(i => h.windspeed_10m[i]);
+    const precip = idx.map(i => h.precipitation[i]);
+    const cloud  = idx.map(i => h.cloudcover[i]);
+
+    // Chart 1: temperature + cloud cover
+    new Chart(document.getElementById('wx-temp'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Temperatur (°C)',
+            data: temp,
+            borderColor: '#7ab868',
+            backgroundColor: 'rgba(122,184,104,0.13)',
+            borderWidth: 2,
+            pointRadius: 2,
+            pointHoverRadius: 4,
+            fill: true,
+            tension: 0.35,
+            yAxisID: 'yT',
+            order: 1,
+          },
+          {
+            label: 'Skydekke (%)',
+            data: cloud,
+            borderColor: 'rgba(160,165,185,0.35)',
+            backgroundColor: 'rgba(120,130,155,0.1)',
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: true,
+            tension: 0.3,
+            yAxisID: 'yC',
+            order: 2,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: FG, boxWidth: 12, font: { size: 11 } } },
+          tooltip: tooltipDefaults,
+        },
+        scales: {
+          x: { grid: { color: GRID }, ticks: { color: MUTED, maxTicksLimit: 16, font: { size: 10 } } },
+          yT: {
+            type: 'linear', position: 'left',
+            title: { display: true, text: '°C', color: MUTED, font: { size: 11 } },
+            grid: { color: GRID },
+            ticks: { color: MUTED, font: { size: 10 } },
+          },
+          yC: {
+            type: 'linear', position: 'right',
+            min: 0, max: 100,
+            title: { display: true, text: 'skyer %', color: MUTED, font: { size: 11 } },
+            grid: { display: false },
+            ticks: { color: MUTED, font: { size: 10 }, stepSize: 25, callback: v => v + '%' },
+          },
+        },
+      },
+    });
+
+    // Chart 2: wind + precipitation
+    new Chart(document.getElementById('wx-wind'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Vind (m/s)',
+            data: wind,
+            type: 'line',
+            borderColor: '#5599dd',
+            backgroundColor: 'rgba(85,153,221,0.08)',
+            borderWidth: 2,
+            pointRadius: 2,
+            pointHoverRadius: 4,
+            fill: false,
+            tension: 0.3,
+            yAxisID: 'yW',
+            order: 1,
+          },
+          {
+            label: 'Nedbør (mm)',
+            data: precip,
+            type: 'bar',
+            backgroundColor: 'rgba(85,153,221,0.5)',
+            borderColor: 'rgba(85,153,221,0.75)',
+            borderWidth: 0,
+            yAxisID: 'yP',
+            order: 2,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: FG, boxWidth: 12, font: { size: 11 } } },
+          tooltip: tooltipDefaults,
+        },
+        scales: {
+          x: { grid: { color: GRID }, ticks: { color: MUTED, maxTicksLimit: 16, font: { size: 10 } } },
+          yW: {
+            type: 'linear', position: 'left', min: 0,
+            title: { display: true, text: 'm/s', color: MUTED, font: { size: 11 } },
+            grid: { color: GRID },
+            ticks: { color: MUTED, font: { size: 10 } },
+          },
+          yP: {
+            type: 'linear', position: 'right', min: 0,
+            title: { display: true, text: 'mm', color: MUTED, font: { size: 11 } },
+            grid: { display: false },
+            ticks: { color: MUTED, font: { size: 10 } },
+          },
+        },
+      },
+    });
+
+    document.getElementById('wx-loading').style.display = 'none';
+    document.getElementById('wx-content').style.display = 'block';
+  }
+
+  loadWeather()
+    .then(buildCharts)
+    .catch(function (e) {
+      document.getElementById('wx-loading').style.display = 'none';
+      var err = document.getElementById('wx-error');
+      err.textContent = 'Kunne ikke hente værdata: ' + e.message;
+      err.style.display = 'block';
+    });
+})();
+</script>
 
 </body>
 </html>
