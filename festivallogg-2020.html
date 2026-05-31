@@ -130,6 +130,47 @@
       font-size: 0.95rem;
     }
 
+    .notes-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .notes-section h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .notes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .notes-list li {
+      font-size: 0.93rem;
+      color: var(--text);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .notes-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .notes-list a {
+      color: var(--link);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -284,6 +325,16 @@
       <div class="value">Borrevannet</div>
     </div>
   </div>
+
+  
+  <section class="notes-section">
+    <h3>Notater</h3>
+    <ul class="notes-list">
+      <li>Sondre var ikke med; ellers de vanlige.</li>
+      <li>Jarle tok en på 3 kg.</li>
+      <li><a href="https://www.nb.no/items/URN:NBN:no-nb_digibok_2013101408208" target="_blank" rel="noopener">Lesestoff for turen (Nasjonalbiblioteket)</a></li>
+    </ul>
+  </section>
 
   <h3>Timevis v&aelig;r &mdash; 15.–16. mai</h3>
   <div class="weather-widget">

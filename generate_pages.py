@@ -47,15 +47,39 @@ def date_range_label(start_iso, end_iso):
 
 
 YEARS_RAW = [
-    {"year": 2025, "start": "2025-05-23", "location": "Borrevannet"},
-    {"year": 2024, "start": "2024-05-24", "location": "Borrevannet"},
+    {"year": 2025, "start": "2025-05-23", "location": "Borrevannet", "notes": [
+        "Sondre og Marius var ikke med; ellers de vanlige.",
+    ]},
+    {"year": 2024, "start": "2024-05-24", "location": "Borrevannet", "notes": [
+        "Sondre var ikke med; ellers de vanlige.",
+    ]},
     {"year": 2022, "start": "2022-05-27", "location": "Borrevannet"},
-    {"year": 2021, "start": "2021-05-21", "location": "Borrevannet"},
-    {"year": 2020, "start": "2020-05-15", "location": "Borrevannet"},
-    {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta"},
+    {"year": 2021, "start": "2021-05-21", "location": "Borrevannet", "notes": [
+        "Tre båter: Jæger- og fiskeforeningen, Umulige Trær og Jarles båt.",
+        "Alle seks deltok på festivalen.",
+        "Oslo-båten: Sondre og Kristian.",
+        "Jon dro en på 5,6 kg lørdag.",
+        "Jarle 6,3 kg lørdag.",
+        "Sondre og Kristian dro hjem tidlig lørdag.",
+        '<a href="https://www.facebook.com/reel/10159311502880833" target="_blank" rel="noopener">Video fra festivalen (Facebook)</a>',
+    ]},
+    {"year": 2020, "start": "2020-05-15", "location": "Borrevannet", "notes": [
+        "Sondre var ikke med; ellers de vanlige.",
+        "Jarle tok en på 3 kg.",
+        '<a href="https://www.nb.no/items/URN:NBN:no-nb_digibok_2013101408208" target="_blank" rel="noopener">Lesestoff for turen (Nasjonalbiblioteket)</a>',
+    ]},
+    {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta", "notes": [
+        "Jon tok en på 9,4 kg – festivalrekord!",
+    ]},
     {"year": 2018, "start": "2018-05-26", "location": "Borrevannet"},
-    {"year": 2017, "start": "2017-05-24", "location": "Borrevannet"},
-    {"year": 2013, "start": "2013-05-18", "location": "Borrevannet"},
+    {"year": 2017, "start": "2017-05-24", "location": "Borrevannet", "notes": [
+        "Deltakere: Jon, Jarle, Pål, Kristian og Vegard Petersen (gjesteopptreden).",
+        '<a href="https://www.nrk.no/natur/xl/kampen-mot-gjeddemafiaen-1.13510079" target="_blank" rel="noopener">Lesestoff: Kampen mot gjeddemafiaen (NRK)</a>',
+    ]},
+    {"year": 2013, "start": "2013-05-18", "location": "Herjeholmen", "notes": [
+        "Vi sov i telt – eneste gang i festivalhistorien.",
+        "Lokasjon: Herjeholmen ved Borrevannet.",
+    ]},
 ]
 
 for y in YEARS_RAW:
@@ -196,6 +220,47 @@ CSS = """\
       color: var(--heading);
       font-weight: 600;
       font-size: 0.95rem;
+    }
+
+    .notes-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .notes-section h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .notes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .notes-list li {
+      font-size: 0.93rem;
+      color: var(--text);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .notes-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .notes-list a {
+      color: var(--link);
     }
 
     table {
@@ -530,6 +595,21 @@ JS_TEMPLATE = """\
 })();"""
 
 
+def make_notes(y):
+    items = y.get("notes", [])
+    if not items:
+        return ""
+    lis = "\n".join(f"      <li>{item}</li>" for item in items)
+    return f"""
+  <section class="notes-section">
+    <h3>Notater</h3>
+    <ul class="notes-list">
+{lis}
+    </ul>
+  </section>
+"""
+
+
 def make_page(y):
     year      = y["year"]
     start     = y["start"]
@@ -579,6 +659,7 @@ def make_page(y):
     </div>
   </div>
 
+  {make_notes(y)}
   <h3>Timevis v&aelig;r &mdash; {label}</h3>
   <div class="weather-widget">
     <p class="wx-loading" id="wx-loading">Henter historiske v&aelig;rdata fra Borrevannet&hellip;</p>
