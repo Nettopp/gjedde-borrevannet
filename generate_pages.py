@@ -47,14 +47,14 @@ def date_range_label(start_iso, end_iso):
 
 
 YEARS_RAW = [
-    {"year": 2025, "start": "2025-05-23", "location": "Borrevannet", "notes": [
+    {"year": 2025, "start": "2025-05-23", "location": "Knudsrødhytta", "notes": [
         "Sondre og Marius var ikke med; ellers de vanlige.",
     ]},
-    {"year": 2024, "start": "2024-05-24", "location": "Borrevannet", "notes": [
+    {"year": 2024, "start": "2024-05-24", "location": "Knudsrødhytta", "notes": [
         "Sondre var ikke med; ellers de vanlige.",
     ]},
-    {"year": 2022, "start": "2022-05-27", "location": "Borrevannet"},
-    {"year": 2021, "start": "2021-05-21", "location": "Borrevannet", "notes": [
+    {"year": 2022, "start": "2022-05-27", "location": "Knudsrødhytta"},
+    {"year": 2021, "start": "2021-05-21", "location": "Knudsrødhytta", "notes": [
         "Tre båter: Jæger- og fiskeforeningen, Umulige Trær og Jarles båt.",
         "Alle seks deltok på festivalen.",
         "Oslo-båten: Sondre og Kristian.",
@@ -63,7 +63,7 @@ YEARS_RAW = [
         "Sondre og Kristian dro hjem tidlig lørdag.",
         '<a href="https://www.facebook.com/reel/10159311502880833" target="_blank" rel="noopener">Video fra festivalen (Facebook)</a>',
     ]},
-    {"year": 2020, "start": "2020-05-15", "location": "Borrevannet", "notes": [
+    {"year": 2020, "start": "2020-05-15", "location": "Knudsrødhytta", "notes": [
         "Sondre var ikke med; ellers de vanlige.",
         "Jarle tok en på 3 kg.",
         '<a href="https://www.nb.no/items/URN:NBN:no-nb_digibok_2013101408208" target="_blank" rel="noopener">Lesestoff for turen (Nasjonalbiblioteket)</a>',
@@ -71,8 +71,8 @@ YEARS_RAW = [
     {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta", "notes": [
         "Jon tok en på 9,4 kg – festivalrekord!",
     ]},
-    {"year": 2018, "start": "2018-05-26", "location": "Borrevannet"},
-    {"year": 2017, "start": "2017-05-24", "location": "Borrevannet", "notes": [
+    {"year": 2018, "start": "2018-05-26", "location": "Knudsrødhytta"},
+    {"year": 2017, "start": "2017-05-24", "location": "Knudsrødhytta", "notes": [
         "Deltakere: Jon, Jarle, Pål, Kristian og Vegard Petersen (gjesteopptreden).",
         '<a href="https://www.nrk.no/natur/xl/kampen-mot-gjeddemafiaen-1.13510079" target="_blank" rel="noopener">Lesestoff: Kampen mot gjeddemafiaen (NRK)</a>',
     ]},
