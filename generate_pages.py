@@ -54,7 +54,7 @@ YEARS_RAW = [
         "Sondre var ikke med; ellers de vanlige.",
     ]},
     {"year": 2022, "start": "2022-05-27", "location": "Knudsrødhytta"},
-    {"year": 2021, "start": "2021-05-21", "location": "Knudsrødhytta", "notes": [
+    {"year": 2021, "start": "2021-05-21", "location": "Knudsrødhytta", "youtube": "ue1HVleq134", "notes": [
         "Tre båter: Jæger- og fiskeforeningen, Umulige Trær og Jarles båt.",
         "Alle seks deltok på festivalen.",
         "Oslo-båten: Sondre og Kristian.",
@@ -385,6 +385,22 @@ CSS = """\
       font-size: 0.78rem;
       color: var(--text-muted);
       line-height: 1.35;
+    }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-top: 0.8rem;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
     }"""
 
 
@@ -595,6 +611,20 @@ JS_TEMPLATE = """\
 })();"""
 
 
+def make_video(y):
+    vid = y.get("youtube")
+    if not vid:
+        return ""
+    return f"""
+  <h3>Video</h3>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/{vid}"
+            title="Gjeddefestivalen {y['year']}"
+            allowfullscreen loading="lazy"></iframe>
+  </div>
+"""
+
+
 def make_notes(y):
     items = y.get("notes", [])
     if not items:
@@ -679,7 +709,7 @@ def make_page(y):
 
   <h3>Bilder</h3>
   {make_gallery(year)}
-
+  {make_video(y)}
 </main>
 
 <footer>
