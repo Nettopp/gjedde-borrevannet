@@ -71,7 +71,7 @@ YEARS_RAW = [
     {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta", "notes": [
         "Jon tok en på 9,4 kg – festivalrekord!",
     ]},
-    {"year": 2018, "start": "2018-05-26", "location": "Knudsrødhytta"},
+    {"year": 2018, "start": "2018-05-26", "location": "Knudsrødhytta", "youtube": "YCqZ8zWx9s8"},
     {"year": 2017, "start": "2017-05-24", "location": "Knudsrødhytta", "notes": [
         "Deltakere: Jon, Jarle, Pål, Kristian og Vegard Petersen (gjesteopptreden).",
         '<a href="https://www.nrk.no/natur/xl/kampen-mot-gjeddemafiaen-1.13510079" target="_blank" rel="noopener">Lesestoff: Kampen mot gjeddemafiaen (NRK)</a>',
