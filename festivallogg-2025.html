@@ -212,6 +212,47 @@
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -261,11 +302,243 @@
     </div>
   </div>
 
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+  <h3>Bilder</h3>
+  <div class="photo-grid">
+    <figure>
+      <a href="bilder/2025/web/drone-bat-mork-01.jpg" target="_blank"><img src="bilder/2025/web/drone-bat-mork-01.jpg" alt="Dronen fant båten. Fisken fant skjulestedet sitt." loading="lazy"></a>
+      <figcaption>Dronen fant båten. Fisken fant skjulestedet sitt.</figcaption>
+    </figure>
 
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+    <figure>
+      <a href="bilder/2025/web/drone-borrevannet-panorama.jpg" target="_blank"><img src="bilder/2025/web/drone-borrevannet-panorama.jpg" alt="Borrevannet fra langt oppe – båten er en prikk, håpet er sto" loading="lazy"></a>
+      <figcaption>Borrevannet fra langt oppe – båten er en prikk, håpet er stort.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-hoyt-fjord.jpg" target="_blank"><img src="bilder/2025/web/drone-hoyt-fjord.jpg" alt="Høydrekord: Oslofjorden skimtes i horisonten bak Borrevannet" loading="lazy"></a>
+      <figcaption>Høydrekord: Oslofjorden skimtes i horisonten bak Borrevannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-bat-ovenfra.jpg" target="_blank"><img src="bilder/2025/web/drone-bat-ovenfra.jpg" alt="Fugleperspektiv: båten ser liten ut. Fisken vet det." loading="lazy"></a>
+      <figcaption>Fugleperspektiv: båten ser liten ut. Fisken vet det.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-speiderhytta-brygge.jpg" target="_blank"><img src="bilder/2025/web/drone-speiderhytta-brygge.jpg" alt="Speiderhytta fra lufta – brygge, båter, klar for festival." loading="lazy"></a>
+      <figcaption>Speiderhytta fra lufta – brygge, båter, klar for festival.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-speiderhytta-ovenfra.jpg" target="_blank"><img src="bilder/2025/web/drone-speiderhytta-ovenfra.jpg" alt="Speiderhytta rett ovenfra. Det røde taket er lett å kjenne i" loading="lazy"></a>
+      <figcaption>Speiderhytta rett ovenfra. Det røde taket er lett å kjenne igjen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-bat-ror-01.jpg" target="_blank"><img src="bilder/2025/web/drone-bat-ror-01.jpg" alt="Dronen tett på – fiskerne aner ikke at de er fulgt." loading="lazy"></a>
+      <figcaption>Dronen tett på – fiskerne aner ikke at de er fulgt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-bat-ror-02.jpg" target="_blank"><img src="bilder/2025/web/drone-bat-ror-02.jpg" alt="Roing i bølger dokumentert ovenfra. Dronen er tryggere ute." loading="lazy"></a>
+      <figcaption>Roing i bølger dokumentert ovenfra. Dronen er tryggere ute.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-bat-siv-01.jpg" target="_blank"><img src="bilder/2025/web/drone-bat-siv-01.jpg" alt="Langs sivet – der gjedda lurer og håpet blomstrer." loading="lazy"></a>
+      <figcaption>Langs sivet – der gjedda lurer og håpet blomstrer.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-bat-ror-03.jpg" target="_blank"><img src="bilder/2025/web/drone-bat-ror-03.jpg" alt="Dronen nærmer seg. Fiskeplanene sjekkes ut." loading="lazy"></a>
+      <figcaption>Dronen nærmer seg. Fiskeplanene sjekkes ut.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-speiderhytta-panorama.jpg" target="_blank"><img src="bilder/2025/web/drone-speiderhytta-panorama.jpg" alt="Speiderhytta, brygga og Borrevannet – full festivalovervåkni" loading="lazy"></a>
+      <figcaption>Speiderhytta, brygga og Borrevannet – full festivalovervåkning.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/drone-bat-siv-02.jpg" target="_blank"><img src="bilder/2025/web/drone-bat-siv-02.jpg" alt="Tilbake til sivet. Den andre runden er alltid bedre." loading="lazy"></a>
+      <figcaption>Tilbake til sivet. Den andre runden er alltid bedre.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/speiderhytta-terrasse.jpg" target="_blank"><img src="bilder/2025/web/speiderhytta-terrasse.jpg" alt="Et sjeldent øyeblikk av sol på Speiderhytta-terrassen. Flagg" loading="lazy"></a>
+      <figcaption>Et sjeldent øyeblikk av sol på Speiderhytta-terrassen. Flagget er stolt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/roing-i-haglvaer.jpg" target="_blank"><img src="bilder/2025/web/roing-i-haglvaer.jpg" alt="Hagl i ansiktet, åren i hånda. Borrevannet 2025 satte listen" loading="lazy"></a>
+      <figcaption>Hagl i ansiktet, åren i hånda. Borrevannet 2025 satte listen tidlig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/bat-selfie-regn.jpg" target="_blank"><img src="bilder/2025/web/bat-selfie-regn.jpg" alt="Selfie midt i snøbyge. Uvær er bare annen festival-stemning." loading="lazy"></a>
+      <figcaption>Selfie midt i snøbyge. Uvær er bare annen festival-stemning.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/to-menn-i-regn.jpg" target="_blank"><img src="bilder/2025/web/to-menn-i-regn.jpg" alt="Rødbuks og grønnjakke – standhaftige sjeler begge to." loading="lazy"></a>
+      <figcaption>Rødbuks og grønnjakke – standhaftige sjeler begge to.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/solbrille-selfie-vaat.jpg" target="_blank"><img src="bilder/2025/web/solbrille-selfie-vaat.jpg" alt="Gjennomvåt solbrille-selfie. Brillene ser rolige ut, mannen " loading="lazy"></a>
+      <figcaption>Gjennomvåt solbrille-selfie. Brillene ser rolige ut, mannen bak likeså.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/lasting-ved-brygga-01.jpg" target="_blank"><img src="bilder/2025/web/lasting-ved-brygga-01.jpg" alt="Lasting av båten i tåke. Optimismen pakkes først." loading="lazy"></a>
+      <figcaption>Lasting av båten i tåke. Optimismen pakkes først.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/lasting-ved-brygga-02.jpg" target="_blank"><img src="bilder/2025/web/lasting-ved-brygga-02.jpg" alt="Utstyret inn, regnet ut. Avgang under åpent spørsmål." loading="lazy"></a>
+      <figcaption>Utstyret inn, regnet ut. Avgang under åpent spørsmål.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/presenning-i-vind.jpg" target="_blank"><img src="bilder/2025/web/presenning-i-vind.jpg" alt="Presenning i vindkast er en teknikk for viderekomne." loading="lazy"></a>
+      <figcaption>Presenning i vindkast er en teknikk for viderekomne.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/roing-i-regn-01.jpg" target="_blank"><img src="bilder/2025/web/roing-i-regn-01.jpg" alt="Gjennomvåt og urokkelig – mannen nekter å la regnet vinne." loading="lazy"></a>
+      <figcaption>Gjennomvåt og urokkelig – mannen nekter å la regnet vinne.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/roing-i-regn-02.jpg" target="_blank"><img src="bilder/2025/web/roing-i-regn-02.jpg" alt="Portrett av en mann som har sett verre. Bergansen holder." loading="lazy"></a>
+      <figcaption>Portrett av en mann som har sett verre. Bergansen holder.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/fiske-i-regn-01.jpg" target="_blank"><img src="bilder/2025/web/fiske-i-regn-01.jpg" alt="Fiskestangen er ute, regnet er inn. Fisken bryr seg ikke om " loading="lazy"></a>
+      <figcaption>Fiskestangen er ute, regnet er inn. Fisken bryr seg ikke om noen av delene.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/fiske-i-regn-02.jpg" target="_blank"><img src="bilder/2025/web/fiske-i-regn-02.jpg" alt="Ølen i båten overlever regnet. Det gjør håpet om gjedde også" loading="lazy"></a>
+      <figcaption>Ølen i båten overlever regnet. Det gjør håpet om gjedde også.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/regnbue-med-stang-01.jpg" target="_blank"><img src="bilder/2025/web/regnbue-med-stang-01.jpg" alt="Regnbue over Borrevannet. Stangen pekte dit gullet burde lig" loading="lazy"></a>
+      <figcaption>Regnbue over Borrevannet. Stangen pekte dit gullet burde ligge.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/regnbue-vid-01.jpg" target="_blank"><img src="bilder/2025/web/regnbue-vid-01.jpg" alt="Full regnbue i vidvinkel. Naturen beklager forrige time." loading="lazy"></a>
+      <figcaption>Full regnbue i vidvinkel. Naturen beklager forrige time.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/regnbue-med-sluk.jpg" target="_blank"><img src="bilder/2025/web/regnbue-med-sluk.jpg" alt="Dobbel gevinst: regnbue og sluk i ett bilde." loading="lazy"></a>
+      <figcaption>Dobbel gevinst: regnbue og sluk i ett bilde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/regnbue-med-ol.jpg" target="_blank"><img src="bilder/2025/web/regnbue-med-ol.jpg" alt="Regnbue + Frydenlund = Borrevannet-festivalen 2025 i ett bil" loading="lazy"></a>
+      <figcaption>Regnbue + Frydenlund = Borrevannet-festivalen 2025 i ett bilde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/storm-og-sol-01.jpg" target="_blank"><img src="bilder/2025/web/storm-og-sol-01.jpg" alt="Stormen kommer bakfra – mannen smiler likevel." loading="lazy"></a>
+      <figcaption>Stormen kommer bakfra – mannen smiler likevel.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/storm-og-sol-02.jpg" target="_blank"><img src="bilder/2025/web/storm-og-sol-02.jpg" alt="Stående i båten under mørk himmel. En viking gjør det han må" loading="lazy"></a>
+      <figcaption>Stående i båten under mørk himmel. En viking gjør det han må.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/fiske-i-storm.jpg" target="_blank"><img src="bilder/2025/web/fiske-i-storm.jpg" alt="Neongrønn sluk kastet mot mørk storm. Gjedda er enten impone" loading="lazy"></a>
+      <figcaption>Neongrønn sluk kastet mot mørk storm. Gjedda er enten imponert eller livredd.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/sol-gjennom-storm.jpg" target="_blank"><img src="bilder/2025/web/sol-gjennom-storm.jpg" alt="Solen brøt gjennom stormen i ett sekund. Det var nok til et " loading="lazy"></a>
+      <figcaption>Solen brøt gjennom stormen i ett sekund. Det var nok til et bilde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/selfie-i-presenning.jpg" target="_blank"><img src="bilder/2025/web/selfie-i-presenning.jpg" alt="Presenning som regnhette – festivalens mest kreative løsning" loading="lazy"></a>
+      <figcaption>Presenning som regnhette – festivalens mest kreative løsning.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/regnbue-touchdown.jpg" target="_blank"><img src="bilder/2025/web/regnbue-touchdown.jpg" alt="Regnbuen landet rett på Borrevannet. X markerer stedet der s" loading="lazy"></a>
+      <figcaption>Regnbuen landet rett på Borrevannet. X markerer stedet der skatten ikke var.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/regnbue-farger.jpg" target="_blank"><img src="bilder/2025/web/regnbue-farger.jpg" alt="Fargeeksplosjonen etter stormen – regnbuen på sitt beste." loading="lazy"></a>
+      <figcaption>Fargeeksplosjonen etter stormen – regnbuen på sitt beste.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/kveldssol-roing-01.jpg" target="_blank"><img src="bilder/2025/web/kveldssol-roing-01.jpg" alt="Kveldssol på speilblankt Borrevannet. Etter all regnet fortj" loading="lazy"></a>
+      <figcaption>Kveldssol på speilblankt Borrevannet. Etter all regnet fortjente de dette.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/kveldssol-roing-02.jpg" target="_blank"><img src="bilder/2025/web/kveldssol-roing-02.jpg" alt="Skyene speiler seg i det stille vannet. Roingen er kontempla" loading="lazy"></a>
+      <figcaption>Skyene speiler seg i det stille vannet. Roingen er kontemplativ.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/avgang-fra-brygga.jpg" target="_blank"><img src="bilder/2025/web/avgang-fra-brygga.jpg" alt="Siste blikk mot brygga. Til neste år." loading="lazy"></a>
+      <figcaption>Siste blikk mot brygga. Til neste år.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/baring-av-utstyr.jpg" target="_blank"><img src="bilder/2025/web/baring-av-utstyr.jpg" alt="Fullt utstyrt på vei hjem. Fiskestengene stikker i alle retn" loading="lazy"></a>
+      <figcaption>Fullt utstyrt på vei hjem. Fiskestengene stikker i alle retninger.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/to-menn-ved-grill.jpg" target="_blank"><img src="bilder/2025/web/to-menn-ved-grill.jpg" alt="To menn, ett flammende grill, ingen unnskyldninger." loading="lazy"></a>
+      <figcaption>To menn, ett flammende grill, ingen unnskyldninger.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/cowboy-med-ol.jpg" target="_blank"><img src="bilder/2025/web/cowboy-med-ol.jpg" alt="Cowboys drikker Frydenlund – det er fastslått i felten." loading="lazy"></a>
+      <figcaption>Cowboys drikker Frydenlund – det er fastslått i felten.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/cowboy-selfie.jpg" target="_blank"><img src="bilder/2025/web/cowboy-selfie.jpg" alt="Cowboyen er klar. Er festivalen det?" loading="lazy"></a>
+      <figcaption>Cowboyen er klar. Er festivalen det?</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/ved-til-grillen.jpg" target="_blank"><img src="bilder/2025/web/ved-til-grillen.jpg" alt="Sjefsgrilleren tilfører ved – med ro og autoritet." loading="lazy"></a>
+      <figcaption>Sjefsgrilleren tilfører ved – med ro og autoritet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/ved-grillen-01.jpg" target="_blank"><img src="bilder/2025/web/ved-grillen-01.jpg" alt="Rødbuks er tilbake og grillklar." loading="lazy"></a>
+      <figcaption>Rødbuks er tilbake og grillklar.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/ved-grillen-02.jpg" target="_blank"><img src="bilder/2025/web/ved-grillen-02.jpg" alt="Ny pose, samme engasjement for ilden." loading="lazy"></a>
+      <figcaption>Ny pose, samme engasjement for ilden.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/kjoett-paa-grill-01.jpg" target="_blank"><img src="bilder/2025/web/kjoett-paa-grill-01.jpg" alt="Entrecoten møter flammen. Et historisk øyeblikk." loading="lazy"></a>
+      <figcaption>Entrecoten møter flammen. Et historisk øyeblikk.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2025/web/kjoett-paa-grill-02.jpg" target="_blank"><img src="bilder/2025/web/kjoett-paa-grill-02.jpg" alt="Maillard-reaksjonen er i gang. Snart middag." loading="lazy"></a>
+      <figcaption>Maillard-reaksjonen er i gang. Snart middag.</figcaption>
+    </figure>
+  </div>
 
 </main>
 

@@ -212,6 +212,47 @@
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -226,7 +267,7 @@
 
 <header>
   <h1>Gjeddefestivalen 2021</h1>
-  <p>22.–23. mai &nbsp;&middot;&nbsp; Borrevannet</p>
+  <p>21.–22. mai &nbsp;&middot;&nbsp; Borrevannet</p>
 </header>
 
 <main>
@@ -236,7 +277,7 @@
   <div class="meta-grid">
     <div class="meta-item">
       <div class="label">Dato</div>
-      <div class="value">22.–23. mai 2021</div>
+      <div class="value">21.–22. mai 2021</div>
     </div>
     <div class="meta-item">
       <div class="label">Sted</div>
@@ -244,7 +285,7 @@
     </div>
   </div>
 
-  <h3>Timevis v&aelig;r &mdash; 22.–23. mai</h3>
+  <h3>Timevis v&aelig;r &mdash; 21.–22. mai</h3>
   <div class="weather-widget">
     <p class="wx-loading" id="wx-loading">Henter historiske v&aelig;rdata fra Borrevannet&hellip;</p>
     <p class="wx-error" id="wx-error" style="display:none"></p>
@@ -261,11 +302,298 @@
     </div>
   </div>
 
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+  <h3>Bilder</h3>
+  <div class="photo-grid">
+    <figure>
+      <a href="bilder/2021/web/pizza-og-ol.jpg" target="_blank"><img src="bilder/2021/web/pizza-og-ol.jpg" alt="Festivalmåltid. To skiver pizza og en Aas Vienna Lager. Fest" loading="lazy"></a>
+      <figcaption>Festivalmåltid. To skiver pizza og en Aas Vienna Lager. Festivalmenyen er satt.</figcaption>
+    </figure>
 
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+    <figure>
+      <a href="bilder/2021/web/gjedde-i-noten.jpg" target="_blank"><img src="bilder/2021/web/gjedde-i-noten.jpg" alt="Gjedde fanget i håven. Navnekonkurransen om festivalen er he" loading="lazy"></a>
+      <figcaption>Gjedde fanget i håven. Navnekonkurransen om festivalen er herved avgjort.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/crush-i-baten.jpg" target="_blank"><img src="bilder/2021/web/crush-i-baten.jpg" alt="Mango & Passionfruit Crush holdes frem som trofé. Roen bak e" loading="lazy"></a>
+      <figcaption>Mango & Passionfruit Crush holdes frem som trofé. Roen bak er konsentrert om fisken.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/kyss-til-gjedda-01.jpg" target="_blank"><img src="bilder/2021/web/kyss-til-gjedda-01.jpg" alt="Kysser gjedda for kameraet. Gjedda er ikke begeistret, men s" loading="lazy"></a>
+      <figcaption>Kysser gjedda for kameraet. Gjedda er ikke begeistret, men stiller opp.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/kyss-til-gjedda-02.jpg" target="_blank"><img src="bilder/2021/web/kyss-til-gjedda-02.jpg" alt="Gjedda fra en annen vinkel. Stemningen er fremdeles ensidig." loading="lazy"></a>
+      <figcaption>Gjedda fra en annen vinkel. Stemningen er fremdeles ensidig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/stolt-gjeddefanger.jpg" target="_blank"><img src="bilder/2021/web/stolt-gjeddefanger.jpg" alt="Smilende gjeddefanger med årets beste fangst. Gjedda ser kri" loading="lazy"></a>
+      <figcaption>Smilende gjeddefanger med årets beste fangst. Gjedda ser kritisk på saken.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-med-kniv-01.jpg" target="_blank"><img src="bilder/2021/web/bal-med-kniv-01.jpg" alt="Kniven stikker opp fra balskålen som et skulpturelt statemen" loading="lazy"></a>
+      <figcaption>Kniven stikker opp fra balskålen som et skulpturelt statement. Ølen til høyre er enig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-med-kniv-02.jpg" target="_blank"><img src="bilder/2021/web/bal-med-kniv-02.jpg" alt="Flammene er høyere nå. Kniven er fast besluttet." loading="lazy"></a>
+      <figcaption>Flammene er høyere nå. Kniven er fast besluttet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-natt-01.jpg" target="_blank"><img src="bilder/2021/web/bal-natt-01.jpg" alt="Balskål natt – hvite flammer mot svart bakgrunn." loading="lazy"></a>
+      <figcaption>Balskål natt – hvite flammer mot svart bakgrunn.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-natt-02.jpg" target="_blank"><img src="bilder/2021/web/bal-natt-02.jpg" alt="To stokker, masse flammer. Ingen klager." loading="lazy"></a>
+      <figcaption>To stokker, masse flammer. Ingen klager.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-natt-03.jpg" target="_blank"><img src="bilder/2021/web/bal-natt-03.jpg" alt="Balskålen i nattmørket. Glasset til venstre venter tålmodig." loading="lazy"></a>
+      <figcaption>Balskålen i nattmørket. Glasset til venstre venter tålmodig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-blatimen.jpg" target="_blank"><img src="bilder/2021/web/bal-blatimen.jpg" alt="Balskål i blåtimen. Flammene er oransje, himmelen er blå, li" loading="lazy"></a>
+      <figcaption>Balskål i blåtimen. Flammene er oransje, himmelen er blå, livet er bra.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-natt-04.jpg" target="_blank"><img src="bilder/2021/web/bal-natt-04.jpg" alt="Balskål sent på kveld. Festivalens eldste tradisjon." loading="lazy"></a>
+      <figcaption>Balskål sent på kveld. Festivalens eldste tradisjon.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/bal-oransje.jpg" target="_blank"><img src="bilder/2021/web/bal-oransje.jpg" alt="Oransje flammer lyser opp kniven og antrekket hengt over kan" loading="lazy"></a>
+      <figcaption>Oransje flammer lyser opp kniven og antrekket hengt over kanten.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fiskebat-01.jpg" target="_blank"><img src="bilder/2021/web/drone-fiskebat-01.jpg" alt="To fiskere på Borrevannet, fanget av dronen. Gjedda er ikke " loading="lazy"></a>
+      <figcaption>To fiskere på Borrevannet, fanget av dronen. Gjedda er ikke varslet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fiskebat-02.jpg" target="_blank"><img src="bilder/2021/web/drone-fiskebat-02.jpg" alt="Gul fiskebåt på mørkt vann – godt separert fra land og ansva" loading="lazy"></a>
+      <figcaption>Gul fiskebåt på mørkt vann – godt separert fra land og ansvar.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-borrevannet-panorama.jpg" target="_blank"><img src="bilder/2021/web/drone-borrevannet-panorama.jpg" alt="Borrevannet i fugleflukt. Panorama mot sør." loading="lazy"></a>
+      <figcaption>Borrevannet i fugleflukt. Panorama mot sør.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-elvemunning.jpg" target="_blank"><img src="bilder/2021/web/drone-elvemunning.jpg" alt="Elvemunningen der Borrevannet møter dyrket mark. Dronen er i" loading="lazy"></a>
+      <figcaption>Elvemunningen der Borrevannet møter dyrket mark. Dronen er imponert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bare-vann-01.jpg" target="_blank"><img src="bilder/2021/web/drone-bare-vann-01.jpg" alt="Bare vann. Dronen driftet litt for langt ut." loading="lazy"></a>
+      <figcaption>Bare vann. Dronen driftet litt for langt ut.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bare-vann-02.jpg" target="_blank"><img src="bilder/2021/web/drone-bare-vann-02.jpg" alt="Mer vann. Fremdeles ingen gjedde synlig fra luften." loading="lazy"></a>
+      <figcaption>Mer vann. Fremdeles ingen gjedde synlig fra luften.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fiskebat-03.jpg" target="_blank"><img src="bilder/2021/web/drone-fiskebat-03.jpg" alt="Den gule båten – liten, men stolt – midt på Borrevannet." loading="lazy"></a>
+      <figcaption>Den gule båten – liten, men stolt – midt på Borrevannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fiskekonkurranse.jpg" target="_blank"><img src="bilder/2021/web/drone-fiskekonkurranse.jpg" alt="Rød og gul båt på vannet. Kappestrid, men ingen vedder." loading="lazy"></a>
+      <figcaption>Rød og gul båt på vannet. Kappestrid, men ingen vedder.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-ovenfra-01.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-ovenfra-01.jpg" alt="To fiskere sett rett ovenfra, stenger ut i vannet." loading="lazy"></a>
+      <figcaption>To fiskere sett rett ovenfra, stenger ut i vannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-ovenfra-02.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-ovenfra-02.jpg" alt="Samme båt, litt annen vinkel. Stengene peker jevnt ut." loading="lazy"></a>
+      <figcaption>Samme båt, litt annen vinkel. Stengene peker jevnt ut.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-ovenfra-03.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-ovenfra-03.jpg" alt="Gul båt fra oven. Begge fisker i full konsentrasjon." loading="lazy"></a>
+      <figcaption>Gul båt fra oven. Begge fisker i full konsentrasjon.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-ovenfra-04.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-ovenfra-04.jpg" alt="Dronen kretser. Fiskerne ignorerer den." loading="lazy"></a>
+      <figcaption>Dronen kretser. Fiskerne ignorerer den.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-skra-01.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-skra-01.jpg" alt="Gul båt fra skrå, stenger peiler ut." loading="lazy"></a>
+      <figcaption>Gul båt fra skrå, stenger peiler ut.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-skra-02.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-skra-02.jpg" alt="Dronen sjekker inn på nytt. Fiskerne er fremdeles der." loading="lazy"></a>
+      <figcaption>Dronen sjekker inn på nytt. Fiskerne er fremdeles der.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-skra-03.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-skra-03.jpg" alt="Gul båt, to stenger, to håpefulle." loading="lazy"></a>
+      <figcaption>Gul båt, to stenger, to håpefulle.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-fisking-skra-04.jpg" target="_blank"><img src="bilder/2021/web/drone-fisking-skra-04.jpg" alt="Fiskeoperasjonen dokumentert for siste gang. Foreløpig." loading="lazy"></a>
+      <figcaption>Fiskeoperasjonen dokumentert for siste gang. Foreløpig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-speiderhytta-01.jpg" target="_blank"><img src="bilder/2021/web/drone-speiderhytta-01.jpg" alt="Speiderhytta fra oven – radardomen og brygga i front." loading="lazy"></a>
+      <figcaption>Speiderhytta fra oven – radardomen og brygga i front.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-speiderhytta-02.jpg" target="_blank"><img src="bilder/2021/web/drone-speiderhytta-02.jpg" alt="Borrevannet i grått kveldslys. Stille og vakkert." loading="lazy"></a>
+      <figcaption>Borrevannet i grått kveldslys. Stille og vakkert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-brygge-inn-01.jpg" target="_blank"><img src="bilder/2021/web/drone-brygge-inn-01.jpg" alt="Brygga med kajakker og robåter. Festivalens fiskefartøy anko" loading="lazy"></a>
+      <figcaption>Brygga med kajakker og robåter. Festivalens fiskefartøy ankommer.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-brygge-inn-02.jpg" target="_blank"><img src="bilder/2021/web/drone-brygge-inn-02.jpg" alt="Den gule båten returnerer. Ekspedisjonen er over." loading="lazy"></a>
+      <figcaption>Den gule båten returnerer. Ekspedisjonen er over.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-alene.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-alene.jpg" alt="Gul båt alene på vannet. Speiderhytta og radardomen i bakgru" loading="lazy"></a>
+      <figcaption>Gul båt alene på vannet. Speiderhytta og radardomen i bakgrunnen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-kvelds.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-kvelds.jpg" alt="Den gule båten på vei inn. Mot kvelden." loading="lazy"></a>
+      <figcaption>Den gule båten på vei inn. Mot kvelden.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-roing.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-roing.jpg" alt="Gul båt med to rykker på åren." loading="lazy"></a>
+      <figcaption>Gul båt med to rykker på åren.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-fiske-01.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-fiske-01.jpg" alt="To fiskere sett fra siden i gul båt." loading="lazy"></a>
+      <figcaption>To fiskere sett fra siden i gul båt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-vinker.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-vinker.jpg" alt="Fisker vinkler mot dronen. Dronen vinker ikke tilbake." loading="lazy"></a>
+      <figcaption>Fisker vinkler mot dronen. Dronen vinker ikke tilbake.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-fiske-02.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-fiske-02.jpg" alt="To fiskere på vei – fisketurens siste runde." loading="lazy"></a>
+      <figcaption>To fiskere på vei – fisketurens siste runde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-fiske-03.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-fiske-03.jpg" alt="Fisker heiser armen mot dronen. Noen er bevisst på å bli dok" loading="lazy"></a>
+      <figcaption>Fisker heiser armen mot dronen. Noen er bevisst på å bli dokumentert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-bat-til-land.jpg" target="_blank"><img src="bilder/2021/web/drone-bat-til-land.jpg" alt="Den gule båten runder inn mot Speiderhytta. Radardomen er i " loading="lazy"></a>
+      <figcaption>Den gule båten runder inn mot Speiderhytta. Radardomen er i sikte.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-speiderhytta-kveld-01.jpg" target="_blank"><img src="bilder/2021/web/drone-speiderhytta-kveld-01.jpg" alt="Speiderhytta fra oven i kveldslys, mot fjorden i bakgrunnen." loading="lazy"></a>
+      <figcaption>Speiderhytta fra oven i kveldslys, mot fjorden i bakgrunnen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-speiderhytta-kveld-02.jpg" target="_blank"><img src="bilder/2021/web/drone-speiderhytta-kveld-02.jpg" alt="Speiderhytta med full oversikt – bygg, brygge, kajakker." loading="lazy"></a>
+      <figcaption>Speiderhytta med full oversikt – bygg, brygge, kajakker.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-borrevannet-kveld.jpg" target="_blank"><img src="bilder/2021/web/drone-borrevannet-kveld.jpg" alt="Borrevannet i blåtime, mot fjorden i horisonten." loading="lazy"></a>
+      <figcaption>Borrevannet i blåtime, mot fjorden i horisonten.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-speiderhytta-panorama.jpg" target="_blank"><img src="bilder/2021/web/drone-speiderhytta-panorama.jpg" alt="Speiderhytta fra oven – hele anlegget med skogen bak og fjor" loading="lazy"></a>
+      <figcaption>Speiderhytta fra oven – hele anlegget med skogen bak og fjorden foran.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-speiderhytta-side.jpg" target="_blank"><img src="bilder/2021/web/drone-speiderhytta-side.jpg" alt="Speiderhytta fra siden – trekanttak, kajakklager og radardom" loading="lazy"></a>
+      <figcaption>Speiderhytta fra siden – trekanttak, kajakklager og radardomen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-brygge-ovenfra.jpg" target="_blank"><img src="bilder/2021/web/drone-brygge-ovenfra.jpg" alt="Brygga fra oven, den gule båten trygt fortøyd. Radardomen ho" loading="lazy"></a>
+      <figcaption>Brygga fra oven, den gule båten trygt fortøyd. Radardomen holder vakt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-brygge-ankomst-01.jpg" target="_blank"><img src="bilder/2021/web/drone-brygge-ankomst-01.jpg" alt="To menn på brygga laster av utstyret. Fisketuren er over." loading="lazy"></a>
+      <figcaption>To menn på brygga laster av utstyret. Fisketuren er over.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/drone-brygge-ankomst-02.jpg" target="_blank"><img src="bilder/2021/web/drone-brygge-ankomst-02.jpg" alt="Brygga med gul fiskebåt og to menn på vei av." loading="lazy"></a>
+      <figcaption>Brygga med gul fiskebåt og to menn på vei av.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/brygge-lossing.jpg" target="_blank"><img src="bilder/2021/web/brygge-lossing.jpg" alt="Lossing fra den gule fiskebåten. Det viktige utstyret bæres " loading="lazy"></a>
+      <figcaption>Lossing fra den gule fiskebåten. Det viktige utstyret bæres nøye.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/dronepiloter-ved-bord-01.jpg" target="_blank"><img src="bilder/2021/web/dronepiloter-ved-bord-01.jpg" alt="To dronepiloter på benken utenfor Speiderhytta. Kontrollerne" loading="lazy"></a>
+      <figcaption>To dronepiloter på benken utenfor Speiderhytta. Kontrollerne er klare.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/dronepiloter-ved-bord-02.jpg" target="_blank"><img src="bilder/2021/web/dronepiloter-ved-bord-02.jpg" alt="Dronepiloter i aksjon – eller pause. Vanskelig å si." loading="lazy"></a>
+      <figcaption>Dronepiloter i aksjon – eller pause. Vanskelig å si.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/dronepiloter-selfie.jpg" target="_blank"><img src="bilder/2021/web/dronepiloter-selfie.jpg" alt="De to dronepilotene tar selfie via dronen. Sjelden teknikk." loading="lazy"></a>
+      <figcaption>De to dronepilotene tar selfie via dronen. Sjelden teknikk.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/kart-horten.jpg" target="_blank"><img src="bilder/2021/web/kart-horten.jpg" alt="Kart over Horten og Borrevannet på veggen. Festivalens navig" loading="lazy"></a>
+      <figcaption>Kart over Horten og Borrevannet på veggen. Festivalens navigasjonssentral.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/agn-wobbler.jpg" target="_blank"><img src="bilder/2021/web/agn-wobbler.jpg" alt="Oransje wobbler på rød stang. Gjedda visste ikke hva som tra" loading="lazy"></a>
+      <figcaption>Oransje wobbler på rød stang. Gjedda visste ikke hva som traff den.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/snelle-revo.jpg" target="_blank"><img src="bilder/2021/web/snelle-revo.jpg" alt="Abu Garcia Revo X-snellen i aksjon. Teknologien er imponeren" loading="lazy"></a>
+      <figcaption>Abu Garcia Revo X-snellen i aksjon. Teknologien er imponerende. Resultatene varierer.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2021/web/hengekove-speiderhytta.jpg" target="_blank"><img src="bilder/2021/web/hengekove-speiderhytta.jpg" alt="Hengekøye mellom trærne ved Speiderhytta. Tauene holder – ti" loading="lazy"></a>
+      <figcaption>Hengekøye mellom trærne ved Speiderhytta. Tauene holder – til nå.</figcaption>
+    </figure>
+  </div>
 
 </main>
 
@@ -276,7 +604,7 @@
 <script>
 (function () {
   var LAT = 59.4119, LON = 10.4677;
-  var START = '2021-05-22', END = '2021-05-23';
+  var START = '2021-05-21', END = '2021-05-22';
   var MULTIDAY = START !== END;
   var GRID = 'rgba(46,64,40,0.55)', MUTED = '#7a9970', FG = '#d6e8cf';
   var NO_DAYS_S = ['s\u00f8','ma','ti','on','to','fr','l\u00f8'];

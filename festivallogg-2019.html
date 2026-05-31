@@ -212,6 +212,47 @@
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -261,11 +302,83 @@
     </div>
   </div>
 
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+  <h3>Bilder</h3>
+  <div class="photo-grid">
+    <figure>
+      <a href="bilder/2019/web/utsikt-fra-terrassen.jpg" target="_blank"><img src="bilder/2019/web/utsikt-fra-terrassen.jpg" alt="Utsikt fra Speiderhytta-terrassen. En øl i forgrunnen – alt " loading="lazy"></a>
+      <figcaption>Utsikt fra Speiderhytta-terrassen. En øl i forgrunnen – alt er som det skal.</figcaption>
+    </figure>
 
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+    <figure>
+      <a href="bilder/2019/web/padling-i-sivet-01.jpg" target="_blank"><img src="bilder/2019/web/padling-i-sivet-01.jpg" alt="Navigasjon gjennom sivskogen. Ekspedisjonsleder vet omtrent " loading="lazy"></a>
+      <figcaption>Navigasjon gjennom sivskogen. Ekspedisjonsleder vet omtrent hvilken vei det er.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/padling-i-sivet-02.jpg" target="_blank"><img src="bilder/2019/web/padling-i-sivet-02.jpg" alt="Videre frem i sivet. Kartlegging av ukjente farvann pågår." loading="lazy"></a>
+      <figcaption>Videre frem i sivet. Kartlegging av ukjente farvann pågår.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/hengekove-solnedgang.jpg" target="_blank"><img src="bilder/2019/web/hengekove-solnedgang.jpg" alt="Hengekøya i kveldslys. Solnedgangen er inkludert i prisen." loading="lazy"></a>
+      <figcaption>Hengekøya i kveldslys. Solnedgangen er inkludert i prisen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/bal-ved-vannet-01.jpg" target="_blank"><img src="bilder/2019/web/bal-ved-vannet-01.jpg" alt="Bålkvelden starter. Brannvesenet er varslet – muntlig." loading="lazy"></a>
+      <figcaption>Bålkvelden starter. Brannvesenet er varslet – muntlig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/bal-ved-vannet-02.jpg" target="_blank"><img src="bilder/2019/web/bal-ved-vannet-02.jpg" alt="Bålet lever videre. Flammene er høyere enn protokollen antyd" loading="lazy"></a>
+      <figcaption>Bålet lever videre. Flammene er høyere enn protokollen antyder.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/balvakt.jpg" target="_blank"><img src="bilder/2019/web/balvakt.jpg" alt="Bålvakt på post ved Borrevannet. Blikket sier: 'Ikke rør mit" loading="lazy"></a>
+      <figcaption>Bålvakt på post ved Borrevannet. Blikket sier: 'Ikke rør mitt bål.'</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/bal-selskap.jpg" target="_blank"><img src="bilder/2019/web/bal-selskap.jpg" alt="Bålkos med selskap. Hatten alene fortjener en bildetekst." loading="lazy"></a>
+      <figcaption>Bålkos med selskap. Hatten alene fortjener en bildetekst.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/bal-sein-kveld.jpg" target="_blank"><img src="bilder/2019/web/bal-sein-kveld.jpg" alt="Kveldsbålet i sitt rette element. Ingen slukker dette frivil" loading="lazy"></a>
+      <figcaption>Kveldsbålet i sitt rette element. Ingen slukker dette frivillig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/hengekove-morgen.jpg" target="_blank"><img src="bilder/2019/web/hengekove-morgen.jpg" alt="Morgenutsikt mot vannet. Hengekøyen er klar – innehaveren fo" loading="lazy"></a>
+      <figcaption>Morgenutsikt mot vannet. Hengekøyen er klar – innehaveren forhandler fortsatt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/hengekove-dag-01.jpg" target="_blank"><img src="bilder/2019/web/hengekove-dag-01.jpg" alt="Hengekøy dag to. Innehaveren har funnet sin livsvisjon." loading="lazy"></a>
+      <figcaption>Hengekøy dag to. Innehaveren har funnet sin livsvisjon.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/hengekove-dag-02.jpg" target="_blank"><img src="bilder/2019/web/hengekove-dag-02.jpg" alt="Utsikten endrer seg ikke. Behovet for å flytte seg heller ik" loading="lazy"></a>
+      <figcaption>Utsikten endrer seg ikke. Behovet for å flytte seg heller ikke.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/hengekove-utsikt.jpg" target="_blank"><img src="bilder/2019/web/hengekove-utsikt.jpg" alt="Hengekøya med full fjordutsikt. Premium-plassering bekreftet" loading="lazy"></a>
+      <figcaption>Hengekøya med full fjordutsikt. Premium-plassering bekreftet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/utsikt-fra-hengekove.jpg" target="_blank"><img src="bilder/2019/web/utsikt-fra-hengekove.jpg" alt="Morgenrapport innenfra hengekøyen: vann, trær, himmel. Alt e" loading="lazy"></a>
+      <figcaption>Morgenrapport innenfra hengekøyen: vann, trær, himmel. Alt er i orden.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2019/web/trar-fra-bakken.jpg" target="_blank"><img src="bilder/2019/web/trar-fra-bakken.jpg" alt="Borrevannet sett nedenfra. Hengekøye-perspektivet er undervu" loading="lazy"></a>
+      <figcaption>Borrevannet sett nedenfra. Hengekøye-perspektivet er undervurdert.</figcaption>
+    </figure>
+  </div>
 
 </main>
 

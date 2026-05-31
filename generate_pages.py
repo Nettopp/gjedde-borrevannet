@@ -1,9 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
+import json
 import datetime
 
 OUT = os.path.dirname(os.path.abspath(__file__))
+
+_captions_file = os.path.join(OUT, "captions.json")
+ALL_CAPTIONS = {}
+if os.path.exists(_captions_file):
+    with open(_captions_file, encoding="utf-8") as _f:
+        ALL_CAPTIONS = json.load(_f)
+
+
+def make_gallery(year):
+    caps = ALL_CAPTIONS.get(str(year), {})
+    if not caps:
+        return '<p class="not-logged">Ingen bilder lastet opp for dette &aring;ret.</p>'
+    items = []
+    for fname, cap in caps.items():
+        alt = cap[:60].replace('"', "&quot;")
+        items.append(
+            "    <figure>\n"
+            f'      <a href="bilder/{year}/web/{fname}" target="_blank">'
+            f'<img src="bilder/{year}/web/{fname}" alt="{alt}" loading="lazy"></a>\n'
+            f"      <figcaption>{cap}</figcaption>\n"
+            "    </figure>"
+        )
+    return '<div class="photo-grid">\n' + "\n\n".join(items) + "\n  </div>"
 
 
 def extend_date(iso):
@@ -25,7 +49,8 @@ def date_range_label(start_iso, end_iso):
 YEARS_RAW = [
     {"year": 2025, "start": "2025-05-23", "location": "Borrevannet"},
     {"year": 2024, "start": "2024-05-24", "location": "Borrevannet"},
-    {"year": 2021, "start": "2021-05-22", "location": "Borrevannet"},
+    {"year": 2022, "start": "2022-05-27", "location": "Borrevannet"},
+    {"year": 2021, "start": "2021-05-21", "location": "Borrevannet"},
     {"year": 2020, "start": "2020-05-15", "location": "Borrevannet"},
     {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta"},
     {"year": 2018, "start": "2018-05-26", "location": "Borrevannet"},
@@ -253,7 +278,48 @@ CSS = """\
     .wx-stats-wrap { overflow-x: auto; margin-top: 1.2rem; }
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
-    .wx-stats-wrap td { padding: 0.4rem 0.6rem; }"""
+    .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }"""
 
 
 # JS template — uses %%START%% and %%END%% as placeholders
@@ -529,11 +595,8 @@ def make_page(y):
     </div>
   </div>
 
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
-
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+  <h3>Bilder</h3>
+  {make_gallery(year)}
 
 </main>
 

@@ -212,6 +212,47 @@
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -261,11 +302,8 @@
     </div>
   </div>
 
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
-
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+  <h3>Bilder</h3>
+  <p class="not-logged">Ingen bilder lastet opp for dette &aring;ret.</p>
 
 </main>
 

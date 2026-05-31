@@ -212,6 +212,47 @@
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -261,11 +302,238 @@
     </div>
   </div>
 
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+  <h3>Bilder</h3>
+  <div class="photo-grid">
+    <figure>
+      <a href="bilder/2020/web/drone-speiderhytta-01.jpg" target="_blank"><img src="bilder/2020/web/drone-speiderhytta-01.jpg" alt="Droneopptak over Speiderhytta. Det røde taket er vanskelig å" loading="lazy"></a>
+      <figcaption>Droneopptak over Speiderhytta. Det røde taket er vanskelig å gå glipp av.</figcaption>
+    </figure>
 
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+    <figure>
+      <a href="bilder/2020/web/drone-speiderhytta-02.jpg" target="_blank"><img src="bilder/2020/web/drone-speiderhytta-02.jpg" alt="Begge bygningene fra oven. Dronepiloten er fornøyd." loading="lazy"></a>
+      <figcaption>Begge bygningene fra oven. Dronepiloten er fornøyd.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/borrevannet-fra-drone-01.jpg" target="_blank"><img src="bilder/2020/web/borrevannet-fra-drone-01.jpg" alt="Borrevannet i kveldslys. Sivet ser faktisk mye bedre ut herf" loading="lazy"></a>
+      <figcaption>Borrevannet i kveldslys. Sivet ser faktisk mye bedre ut herfra.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/ankomst-speiderhytta.jpg" target="_blank"><img src="bilder/2020/web/ankomst-speiderhytta.jpg" alt="Ankomst 2020. Byggestillas i bakgrunnen er årets offisielle " loading="lazy"></a>
+      <figcaption>Ankomst 2020. Byggestillas i bakgrunnen er årets offisielle festivaldekor.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-solnedgang-fjord.jpg" target="_blank"><img src="bilder/2020/web/drone-solnedgang-fjord.jpg" alt="Solnedgang over fjorden sett fra dronen. Kameraet er imponer" loading="lazy"></a>
+      <figcaption>Solnedgang over fjorden sett fra dronen. Kameraet er imponert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/ankomst-gjenger.jpg" target="_blank"><img src="bilder/2020/web/ankomst-gjenger.jpg" alt="Gjengen samler seg. Grilling-operasjonen er igangsatt med to" loading="lazy"></a>
+      <figcaption>Gjengen samler seg. Grilling-operasjonen er igangsatt med to griller.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-brygge-01.jpg" target="_blank"><img src="bilder/2020/web/drone-brygge-01.jpg" alt="Brygga fra oven. To deltakere inspiserer noe som krever dyp " loading="lazy"></a>
+      <figcaption>Brygga fra oven. To deltakere inspiserer noe som krever dyp konsentrasjon.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-speiderhytta-03.jpg" target="_blank"><img src="bilder/2020/web/drone-speiderhytta-03.jpg" alt="Speiderhytta fra oven i gul maiskog. Naturen er i festivalhu" loading="lazy"></a>
+      <figcaption>Speiderhytta fra oven i gul maiskog. Naturen er i festivalhumør.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/grilling-oppstart.jpg" target="_blank"><img src="bilder/2020/web/grilling-oppstart.jpg" alt="Tre gutter, to griller, én hemmelig plan." loading="lazy"></a>
+      <figcaption>Tre gutter, to griller, én hemmelig plan.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-skog.jpg" target="_blank"><img src="bilder/2020/web/drone-skog.jpg" alt="Skogen rundt Borrevannet i kveldssol. Dronepiloten er i sitt" loading="lazy"></a>
+      <figcaption>Skogen rundt Borrevannet i kveldssol. Dronepiloten er i sitt element.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/velkomst-ved-hytta.jpg" target="_blank"><img src="bilder/2020/web/velkomst-ved-hytta.jpg" alt="Gjengen ved hytta i kveldssol. Stillaset er årets signatur-b" loading="lazy"></a>
+      <figcaption>Gjengen ved hytta i kveldssol. Stillaset er årets signatur-bakgrunn.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-borrevannet-02.jpg" target="_blank"><img src="bilder/2020/web/drone-borrevannet-02.jpg" alt="Borrevannet fra dronen med radardomen synlig. James Bond-vib" loading="lazy"></a>
+      <figcaption>Borrevannet fra dronen med radardomen synlig. James Bond-vibes.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/golden-hour-hytta.jpg" target="_blank"><img src="bilder/2020/web/golden-hour-hytta.jpg" alt="Kastanjetreet i golden hour. Festivalens beste fotospot." loading="lazy"></a>
+      <figcaption>Kastanjetreet i golden hour. Festivalens beste fotospot.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/grilling-oppstart-02.jpg" target="_blank"><img src="bilder/2020/web/grilling-oppstart-02.jpg" alt="Grilling i gang, humøret er høyt, bålet er lavt." loading="lazy"></a>
+      <figcaption>Grilling i gang, humøret er høyt, bålet er lavt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-brygge-02.jpg" target="_blank"><img src="bilder/2020/web/drone-brygge-02.jpg" alt="Brygga og kajakken fra oven. Alt er klart for ekspedisjon." loading="lazy"></a>
+      <figcaption>Brygga og kajakken fra oven. Alt er klart for ekspedisjon.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/byggearbeid-kveld.jpg" target="_blank"><img src="bilder/2020/web/byggearbeid-kveld.jpg" alt="Festival i forgrunnen, byggearbeid i bakgrunnen. Multitaskin" loading="lazy"></a>
+      <figcaption>Festival i forgrunnen, byggearbeid i bakgrunnen. Multitasking på høyt nivå.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-kastanjetre.jpg" target="_blank"><img src="bilder/2020/web/drone-kastanjetre.jpg" alt="Kastanjetreet sett rett ovenfra – en grønn kuppel i mai." loading="lazy"></a>
+      <figcaption>Kastanjetreet sett rett ovenfra – en grønn kuppel i mai.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-borrevannet-03.jpg" target="_blank"><img src="bilder/2020/web/drone-borrevannet-03.jpg" alt="Borrevannet i kveldssol med radardomen. Alltid malerisk." loading="lazy"></a>
+      <figcaption>Borrevannet i kveldssol med radardomen. Alltid malerisk.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-panorama.jpg" target="_blank"><img src="bilder/2020/web/drone-panorama.jpg" alt="Panorama over Borrevannet mot fjorden. Dronen er fornøyd." loading="lazy"></a>
+      <figcaption>Panorama over Borrevannet mot fjorden. Dronen er fornøyd.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-solnedgang-02.jpg" target="_blank"><img src="bilder/2020/web/drone-solnedgang-02.jpg" alt="Solnedgang over Borrevannet. Dronen henger i luften og nyter" loading="lazy"></a>
+      <figcaption>Solnedgang over Borrevannet. Dronen henger i luften og nyter synet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/brygga-drone-launch.jpg" target="_blank"><img src="bilder/2020/web/brygga-drone-launch.jpg" alt="Droneoperasjonen koordineres fra brygga. Kameraet er allered" loading="lazy"></a>
+      <figcaption>Droneoperasjonen koordineres fra brygga. Kameraet er allerede i gang.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/drone-solnedgang-03.jpg" target="_blank"><img src="bilder/2020/web/drone-solnedgang-03.jpg" alt="Siste solstråle over åsene. Dronen har fått det med seg." loading="lazy"></a>
+      <figcaption>Siste solstråle over åsene. Dronen har fått det med seg.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/middag-utenfor-01.jpg" target="_blank"><img src="bilder/2020/web/middag-utenfor-01.jpg" alt="Middag under kastanjetreet. Stillaset i bakgrunnen gir opp." loading="lazy"></a>
+      <figcaption>Middag under kastanjetreet. Stillaset i bakgrunnen gir opp.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/amerikansk-festivalfjes.jpg" target="_blank"><img src="bilder/2020/web/amerikansk-festivalfjes.jpg" alt="Stars and Stripes-skjerf, Simms-caps og tommel opp. Festival" loading="lazy"></a>
+      <figcaption>Stars and Stripes-skjerf, Simms-caps og tommel opp. Festivalen er offisielt åpnet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/robat-selfie-2020.jpg" target="_blank"><img src="bilder/2020/web/robat-selfie-2020.jpg" alt="Robåt-selfie med Borrevannet i bakgrunnen. Stjerneskjerfet e" loading="lazy"></a>
+      <figcaption>Robåt-selfie med Borrevannet i bakgrunnen. Stjerneskjerfet er tilbake.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/robat-med-de-andre.jpg" target="_blank"><img src="bilder/2020/web/robat-med-de-andre.jpg" alt="De andre båtene i horisonten. Kappestrid pågår, men uoffisie" loading="lazy"></a>
+      <figcaption>De andre båtene i horisonten. Kappestrid pågår, men uoffisielt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/solnedgang-fra-brygga.jpg" target="_blank"><img src="bilder/2020/web/solnedgang-fra-brygga.jpg" alt="Solnedgang fra brygga. Kraftlinjene er gratis inkludert." loading="lazy"></a>
+      <figcaption>Solnedgang fra brygga. Kraftlinjene er gratis inkludert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/middag-utenfor-02.jpg" target="_blank"><img src="bilder/2020/web/middag-utenfor-02.jpg" alt="Kveldsmåltid ute under treet. God stemning, god mat." loading="lazy"></a>
+      <figcaption>Kveldsmåltid ute under treet. God stemning, god mat.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/middag-utenfor-03.jpg" target="_blank"><img src="bilder/2020/web/middag-utenfor-03.jpg" alt="Middag ved solnedgang under kastanjetreet." loading="lazy"></a>
+      <figcaption>Middag ved solnedgang under kastanjetreet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/balplass-kveld.jpg" target="_blank"><img src="bilder/2020/web/balplass-kveld.jpg" alt="Bålplassen i kveldsstemning med utsikt over Borrevannet." loading="lazy"></a>
+      <figcaption>Bålplassen i kveldsstemning med utsikt over Borrevannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/bal-gapahuken-01.jpg" target="_blank"><img src="bilder/2020/web/bal-gapahuken-01.jpg" alt="Bål under gapahuken i blåtimen. Røde gnister mot blå himmel." loading="lazy"></a>
+      <figcaption>Bål under gapahuken i blåtimen. Røde gnister mot blå himmel.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/bal-gapahuken-02.jpg" target="_blank"><img src="bilder/2020/web/bal-gapahuken-02.jpg" alt="Gnistfontene fra gapahuken. Sikkerhetsavstand er vurdert, ik" loading="lazy"></a>
+      <figcaption>Gnistfontene fra gapahuken. Sikkerhetsavstand er vurdert, ikke vedtatt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/bal-gapahuken-natt.jpg" target="_blank"><img src="bilder/2020/web/bal-gapahuken-natt.jpg" alt="Gapahuken sent på kveld. Stjerner og gnister – festivalkveld" loading="lazy"></a>
+      <figcaption>Gapahuken sent på kveld. Stjerner og gnister – festivalkveldens beste bilde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/bal-gapahuken-folk.jpg" target="_blank"><img src="bilder/2020/web/bal-gapahuken-folk.jpg" alt="Gjengen rundt bålet i gapahuken. Ingen er trøtte." loading="lazy"></a>
+      <figcaption>Gjengen rundt bålet i gapahuken. Ingen er trøtte.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/hengekove-i-skog-01.jpg" target="_blank"><img src="bilder/2020/web/hengekove-i-skog-01.jpg" alt="Hengekøye i lauvskogen ved Borrevannet. Innehaveren er tilst" loading="lazy"></a>
+      <figcaption>Hengekøye i lauvskogen ved Borrevannet. Innehaveren er tilstede men usynlig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/hengekove-i-skog-02.jpg" target="_blank"><img src="bilder/2020/web/hengekove-i-skog-02.jpg" alt="Hengekøye dag to – med myggnettet på plass. Erfaringslæring." loading="lazy"></a>
+      <figcaption>Hengekøye dag to – med myggnettet på plass. Erfaringslæring.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/robat-selfie-02.jpg" target="_blank"><img src="bilder/2020/web/robat-selfie-02.jpg" alt="Robåt-selfie 2020, andre halvdel. Kappestriden er personlig." loading="lazy"></a>
+      <figcaption>Robåt-selfie 2020, andre halvdel. Kappestriden er personlig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/solnedgang-fra-bat.jpg" target="_blank"><img src="bilder/2020/web/solnedgang-fra-bat.jpg" alt="Solnedgang sett fra robåten. Kraftlinjene er en del av kunst" loading="lazy"></a>
+      <figcaption>Solnedgang sett fra robåten. Kraftlinjene er en del av kunstverket.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/nattmørke.jpg" target="_blank"><img src="bilder/2020/web/nattmørke.jpg" alt="Nattbilde fra festivalen. Eksponeringstiden var litt optimis" loading="lazy"></a>
+      <figcaption>Nattbilde fra festivalen. Eksponeringstiden var litt optimistisk.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/hengekove-skog-01.jpg" target="_blank"><img src="bilder/2020/web/hengekove-skog-01.jpg" alt="Hengekøye i grønn sommerskog. Perfekt gjemmested." loading="lazy"></a>
+      <figcaption>Hengekøye i grønn sommerskog. Perfekt gjemmested.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/hengekove-skog-02.jpg" target="_blank"><img src="bilder/2020/web/hengekove-skog-02.jpg" alt="Hengekøye med myggnett – ikke til forhandling." loading="lazy"></a>
+      <figcaption>Hengekøye med myggnett – ikke til forhandling.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/robat-selfie-03.jpg" target="_blank"><img src="bilder/2020/web/robat-selfie-03.jpg" alt="Tredje robåt-selfie. Samme mann, samme vann, litt andre skye" loading="lazy"></a>
+      <figcaption>Tredje robåt-selfie. Samme mann, samme vann, litt andre skyer.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/solnedgang-over-vannet.jpg" target="_blank"><img src="bilder/2020/web/solnedgang-over-vannet.jpg" alt="Solnedgang over Borrevannet fra robåten. Ro og stillhet inkl" loading="lazy"></a>
+      <figcaption>Solnedgang over Borrevannet fra robåten. Ro og stillhet inkludert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/middag-ute-kveld.jpg" target="_blank"><img src="bilder/2020/web/middag-ute-kveld.jpg" alt="Kveldsmiddag under treet i siste dagslys." loading="lazy"></a>
+      <figcaption>Kveldsmiddag under treet i siste dagslys.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/bal-gapahuken-kveld.jpg" target="_blank"><img src="bilder/2020/web/bal-gapahuken-kveld.jpg" alt="Gapahuken tidlig kveld – bålet tenner langsomt opp." loading="lazy"></a>
+      <figcaption>Gapahuken tidlig kveld – bålet tenner langsomt opp.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2020/web/bal-gapahuken-gnister.jpg" target="_blank"><img src="bilder/2020/web/bal-gapahuken-gnister.jpg" alt="Gapahuk-bålet i full blomst. Gnistene krever ekstra luftrom." loading="lazy"></a>
+      <figcaption>Gapahuk-bålet i full blomst. Gnistene krever ekstra luftrom.</figcaption>
+    </figure>
+  </div>
 
 </main>
 

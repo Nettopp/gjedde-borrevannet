@@ -212,6 +212,47 @@
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -261,11 +302,468 @@
     </div>
   </div>
 
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+  <h3>Bilder</h3>
+  <div class="photo-grid">
+    <figure>
+      <a href="bilder/2024/web/drone-bat-siv-01.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-siv-01.jpg" alt="Fiskebåt langs sivkanten. Dronen følger spent med." loading="lazy"></a>
+      <figcaption>Fiskebåt langs sivkanten. Dronen følger spent med.</figcaption>
+    </figure>
 
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-gra-01.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-gra-01.jpg" alt="Borrevannet i grått morgenlys. Båten er en hvit prikk i nedr" loading="lazy"></a>
+      <figcaption>Borrevannet i grått morgenlys. Båten er en hvit prikk i nedre venstre hjørne.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-gra-02.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-gra-02.jpg" alt="Borrevannet fra oven – bred utsikt, overcast himmel." loading="lazy"></a>
+      <figcaption>Borrevannet fra oven – bred utsikt, overcast himmel.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-gra-03.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-gra-03.jpg" alt="Borrevannet i grå mai-stemning. Fiskerne er ute, optimismen " loading="lazy"></a>
+      <figcaption>Borrevannet i grå mai-stemning. Fiskerne er ute, optimismen er uknekket.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-siv-02.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-siv-02.jpg" alt="Fiskebåt langs sivet. Andre runde." loading="lazy"></a>
+      <figcaption>Fiskebåt langs sivet. Andre runde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-01.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-01.jpg" alt="Borrevannet speil. Himmelen vet ikke om den er over eller un" loading="lazy"></a>
+      <figcaption>Borrevannet speil. Himmelen vet ikke om den er over eller under.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-02.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-02.jpg" alt="Skyspeilsparade over Borrevannet. Fotografen er stille." loading="lazy"></a>
+      <figcaption>Skyspeilsparade over Borrevannet. Fotografen er stille.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-03.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-03.jpg" alt="Klassisk Borrevannet-refleksjon. Dette er festivalen på sitt" loading="lazy"></a>
+      <figcaption>Klassisk Borrevannet-refleksjon. Dette er festivalen på sitt vakreste.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-04.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-04.jpg" alt="Borrevannet som lerret – skyer trykkes i vannet." loading="lazy"></a>
+      <figcaption>Borrevannet som lerret – skyer trykkes i vannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-fjord.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-fjord.jpg" alt="Borrevannet med fjorden i horisonten. Dronen er fornøyd." loading="lazy"></a>
+      <figcaption>Borrevannet med fjorden i horisonten. Dronen er fornøyd.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-fjord-02.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-fjord-02.jpg" alt="Bred panorama mot fjorden. Borrevannet og himmel skilles kna" loading="lazy"></a>
+      <figcaption>Bred panorama mot fjorden. Borrevannet og himmel skilles knapt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-panorama.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-panorama.jpg" alt="Fiskebåt liten i det store Borrevannet." loading="lazy"></a>
+      <figcaption>Fiskebåt liten i det store Borrevannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-gra-04.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-gra-04.jpg" alt="Borrevannet mot nordøst. Overcast, men stemningsfullt." loading="lazy"></a>
+      <figcaption>Borrevannet mot nordøst. Overcast, men stemningsfullt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-gra-05.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-gra-05.jpg" alt="Mer Borrevannet. Dronen nekter å gå hjem." loading="lazy"></a>
+      <figcaption>Mer Borrevannet. Dronen nekter å gå hjem.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-speiderhytta-luftfoto.jpg" target="_blank"><img src="bilder/2024/web/drone-speiderhytta-luftfoto.jpg" alt="Speiderhytta sett fra luften – golfbanen og Horten i bakgrun" loading="lazy"></a>
+      <figcaption>Speiderhytta sett fra luften – golfbanen og Horten i bakgrunnen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-horten-panorama-01.jpg" target="_blank"><img src="bilder/2024/web/drone-horten-panorama-01.jpg" alt="Horten og fjorden i dronehorisont. Borrevannet i forgrunnen." loading="lazy"></a>
+      <figcaption>Horten og fjorden i dronehorisont. Borrevannet i forgrunnen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-horten-panorama-02.jpg" target="_blank"><img src="bilder/2024/web/drone-horten-panorama-02.jpg" alt="Bred drone-panorama med Horten, fjord og skog." loading="lazy"></a>
+      <figcaption>Bred drone-panorama med Horten, fjord og skog.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-05.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-05.jpg" alt="Borrevannet – båten er en prikk i det store speilet." loading="lazy"></a>
+      <figcaption>Borrevannet – båten er en prikk i det store speilet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-06.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-06.jpg" alt="Borrevannet refleksjon serie. Ingen to er like." loading="lazy"></a>
+      <figcaption>Borrevannet refleksjon serie. Ingen to er like.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-07.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-07.jpg" alt="Borrevannet panorama mot siv og åker." loading="lazy"></a>
+      <figcaption>Borrevannet panorama mot siv og åker.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-01.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-01.jpg" alt="Blått Borrevannet med fiskebåt i midten." loading="lazy"></a>
+      <figcaption>Blått Borrevannet med fiskebåt i midten.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-02.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-02.jpg" alt="Borrevannet blåner til. Fiskerne er ute." loading="lazy"></a>
+      <figcaption>Borrevannet blåner til. Fiskerne er ute.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-03.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-03.jpg" alt="Borrevannet, blå himmel, to fiskere. Idyllisk." loading="lazy"></a>
+      <figcaption>Borrevannet, blå himmel, to fiskere. Idyllisk.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-04.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-04.jpg" alt="Borrevannet fra dronen – bred og blå." loading="lazy"></a>
+      <figcaption>Borrevannet fra dronen – bred og blå.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-01.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-01.jpg" alt="To fiskere med stenger ute, speilblankt Borrevannet." loading="lazy"></a>
+      <figcaption>To fiskere med stenger ute, speilblankt Borrevannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-02.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-02.jpg" alt="Fiskebåt i midten av Borrevannet, refleksjon rundt." loading="lazy"></a>
+      <figcaption>Fiskebåt i midten av Borrevannet, refleksjon rundt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-03.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-03.jpg" alt="Fiskebåt drone close-up serie. Stengene er ute." loading="lazy"></a>
+      <figcaption>Fiskebåt drone close-up serie. Stengene er ute.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-04.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-04.jpg" alt="To fiskere sett fra siden i fiskebåten." loading="lazy"></a>
+      <figcaption>To fiskere sett fra siden i fiskebåten.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-05.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-05.jpg" alt="Dronen holder øye med fiskeriene." loading="lazy"></a>
+      <figcaption>Dronen holder øye med fiskeriene.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-speiderhytta-ovenfra.jpg" target="_blank"><img src="bilder/2024/web/drone-speiderhytta-ovenfra.jpg" alt="Speiderhytta sett rett ovenfra. Det røde taket er lett å kje" loading="lazy"></a>
+      <figcaption>Speiderhytta sett rett ovenfra. Det røde taket er lett å kjenne igjen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-05.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-05.jpg" alt="Borrevannet i blåtimer. Fiskebåten er der fremdeles." loading="lazy"></a>
+      <figcaption>Borrevannet i blåtimer. Fiskebåten er der fremdeles.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-06.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-06.jpg" alt="Borrevannet bred panorama mot nordvest." loading="lazy"></a>
+      <figcaption>Borrevannet bred panorama mot nordvest.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-07.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-07.jpg" alt="Borrevannet – dronen tar en siste runde." loading="lazy"></a>
+      <figcaption>Borrevannet – dronen tar en siste runde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-blatt-08.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-blatt-08.jpg" alt="Borrevannet – avsluttende panoramashot." loading="lazy"></a>
+      <figcaption>Borrevannet – avsluttende panoramashot.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/gjedde-i-baten.jpg" target="_blank"><img src="bilder/2024/web/gjedde-i-baten.jpg" alt="To gjedder på båtbunnen med Skjærgårds Pils. Prioriteringene" loading="lazy"></a>
+      <figcaption>To gjedder på båtbunnen med Skjærgårds Pils. Prioriteringene er klare.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/gjedde-og-pils.jpg" target="_blank"><img src="bilder/2024/web/gjedde-og-pils.jpg" alt="Dagens fangst presenteres. Pilsen er der for kontekst." loading="lazy"></a>
+      <figcaption>Dagens fangst presenteres. Pilsen er der for kontekst.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-kveld-01.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-kveld-01.jpg" alt="To gutter fisker fra gul båt i kveldssol." loading="lazy"></a>
+      <figcaption>To gutter fisker fra gul båt i kveldssol.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-kveld-02.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-kveld-02.jpg" alt="Kveldsfiske. Roen er total, humøret er høyt." loading="lazy"></a>
+      <figcaption>Kveldsfiske. Roen er total, humøret er høyt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-kveld-03.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-kveld-03.jpg" alt="Siste fiskeøkt. Dagslyset holder med nød og neppe." loading="lazy"></a>
+      <figcaption>Siste fiskeøkt. Dagslyset holder med nød og neppe.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/kikker-og-stang.jpg" target="_blank"><img src="bilder/2024/web/kikker-og-stang.jpg" alt="Kikkert i bruk, fiskestang ute. To fagpersoner i gul båt." loading="lazy"></a>
+      <figcaption>Kikkert i bruk, fiskestang ute. To fagpersoner i gul båt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/to-gutter-gul-bat.jpg" target="_blank"><img src="bilder/2024/web/to-gutter-gul-bat.jpg" alt="To gutter i gul båt, ansikt mot ansikt, begge med snurp. Gje" loading="lazy"></a>
+      <figcaption>To gutter i gul båt, ansikt mot ansikt, begge med snurp. Gjedda er advart.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-sol-01.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-sol-01.jpg" alt="Solskinn over Borrevannet. Fiskebåten er i posisjon." loading="lazy"></a>
+      <figcaption>Solskinn over Borrevannet. Fiskebåten er i posisjon.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-sol-02.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-sol-02.jpg" alt="Blå himmel, blått vann, gul båt. Festivalen 2024 på sitt lys" loading="lazy"></a>
+      <figcaption>Blå himmel, blått vann, gul båt. Festivalen 2024 på sitt lyseste.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-sol-03.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-sol-03.jpg" alt="Sommerfiske i gul båt. Ingen gjedde har det trygt." loading="lazy"></a>
+      <figcaption>Sommerfiske i gul båt. Ingen gjedde har det trygt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/bat-selfie-roing.jpg" target="_blank"><img src="bilder/2024/web/bat-selfie-roing.jpg" alt="Roing i grønn genser, fisking bak. Festivalens arbeidsdeling" loading="lazy"></a>
+      <figcaption>Roing i grønn genser, fisking bak. Festivalens arbeidsdeling er etablert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/roing-turkis-01.jpg" target="_blank"><img src="bilder/2024/web/roing-turkis-01.jpg" alt="Turkiskledd roer i fokus. Solnedgangen samarbeider." loading="lazy"></a>
+      <figcaption>Turkiskledd roer i fokus. Solnedgangen samarbeider.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/roing-turkis-02.jpg" target="_blank"><img src="bilder/2024/web/roing-turkis-02.jpg" alt="Turkis overalt. Borrevannet er ikke overrasket." loading="lazy"></a>
+      <figcaption>Turkis overalt. Borrevannet er ikke overrasket.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-kveld-04.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-kveld-04.jpg" alt="Kveldsfiske i gul båt. En fisker, en roer, en plan." loading="lazy"></a>
+      <figcaption>Kveldsfiske i gul båt. En fisker, en roer, en plan.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-kveld-05.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-kveld-05.jpg" alt="Kveldsstemning på Borrevannet. Festivalens roligste time." loading="lazy"></a>
+      <figcaption>Kveldsstemning på Borrevannet. Festivalens roligste time.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/roing-solnedgang.jpg" target="_blank"><img src="bilder/2024/web/roing-solnedgang.jpg" alt="Turkiskledd roer i kveldssol med hatten på. Et av årets best" loading="lazy"></a>
+      <figcaption>Turkiskledd roer i kveldssol med hatten på. Et av årets beste portretter.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-morgen-01.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-morgen-01.jpg" alt="Morgenfiske. Overcast, men klare for gjedde." loading="lazy"></a>
+      <figcaption>Morgenfiske. Overcast, men klare for gjedde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-morgen-02.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-morgen-02.jpg" alt="Morgen nummer to. Optimismen er uendrelig." loading="lazy"></a>
+      <figcaption>Morgen nummer to. Optimismen er uendrelig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-morgen-03.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-morgen-03.jpg" alt="Fiskeøkt i grå morgen. Gjedda sover fremdeles." loading="lazy"></a>
+      <figcaption>Fiskeøkt i grå morgen. Gjedda sover fremdeles.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-bat-morgen-04.jpg" target="_blank"><img src="bilder/2024/web/fiske-bat-morgen-04.jpg" alt="Fjerde morgenøkt. Stengene er ute, håpet likeså." loading="lazy"></a>
+      <figcaption>Fjerde morgenøkt. Stengene er ute, håpet likeså.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-sol-01.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-sol-01.jpg" alt="Fiskebåten fra oven i solblink på vannet. Abstrakt og vakker" loading="lazy"></a>
+      <figcaption>Fiskebåten fra oven i solblink på vannet. Abstrakt og vakkert.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-sol-02.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-sol-02.jpg" alt="Drone overhead, solrefleks på vannet. Båten er liten, vannet" loading="lazy"></a>
+      <figcaption>Drone overhead, solrefleks på vannet. Båten er liten, vannet er stort.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-01.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-01.jpg" alt="Borrevannet i solskinn. Endelig." loading="lazy"></a>
+      <figcaption>Borrevannet i solskinn. Endelig.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-02.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-02.jpg" alt="Borrevannet solrefleksjon. Dronen er imponert over seg selv." loading="lazy"></a>
+      <figcaption>Borrevannet solrefleksjon. Dronen er imponert over seg selv.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-03.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-03.jpg" alt="Sol og blå himmel over Borrevannet." loading="lazy"></a>
+      <figcaption>Sol og blå himmel over Borrevannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-horten-syd.jpg" target="_blank"><img src="bilder/2024/web/drone-horten-syd.jpg" alt="Horten og Oslofjorden fra syd. Borrevannet i forgrunnen." loading="lazy"></a>
+      <figcaption>Horten og Oslofjorden fra syd. Borrevannet i forgrunnen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-04.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-04.jpg" alt="Borrevannet i sitt beste solskinn." loading="lazy"></a>
+      <figcaption>Borrevannet i sitt beste solskinn.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-05.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-05.jpg" alt="Bred panorama over Borrevannet, skyene har tatt fri." loading="lazy"></a>
+      <figcaption>Bred panorama over Borrevannet, skyene har tatt fri.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-06.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-06.jpg" alt="Borrevannet fra oven, klart vær." loading="lazy"></a>
+      <figcaption>Borrevannet fra oven, klart vær.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-07.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-07.jpg" alt="Avsluttende solparade over Borrevannet." loading="lazy"></a>
+      <figcaption>Avsluttende solparade over Borrevannet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-skyskyggepanorama.jpg" target="_blank"><img src="bilder/2024/web/drone-skyskyggepanorama.jpg" alt="Skyskyggene på vannet konkurrerer med båten om oppmerksomhet" loading="lazy"></a>
+      <figcaption>Skyskyggene på vannet konkurrerer med båten om oppmerksomheten.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-08.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-08.jpg" alt="Borrevannet – sol og ro." loading="lazy"></a>
+      <figcaption>Borrevannet – sol og ro.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-06.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-06.jpg" alt="Fiskebåt sett fra siden i solskinn. Stengene ute." loading="lazy"></a>
+      <figcaption>Fiskebåt sett fra siden i solskinn. Stengene ute.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-07.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-07.jpg" alt="Dronen har funnet sin favorittmotiv: to gutter i gul båt." loading="lazy"></a>
+      <figcaption>Dronen har funnet sin favorittmotiv: to gutter i gul båt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-08.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-08.jpg" alt="Drone fisker-dokumentasjon, dag to." loading="lazy"></a>
+      <figcaption>Drone fisker-dokumentasjon, dag to.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/gul-bat-fiske-sol.jpg" target="_blank"><img src="bilder/2024/web/gul-bat-fiske-sol.jpg" alt="To gutter fisker fra gul båt i stekende sol. En fisker, en a" loading="lazy"></a>
+      <figcaption>To gutter fisker fra gul båt i stekende sol. En fisker, en administrerer.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-09.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-09.jpg" alt="Dronen nærmer seg fiskebåten igjen." loading="lazy"></a>
+      <figcaption>Dronen nærmer seg fiskebåten igjen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-fiske-10.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-fiske-10.jpg" alt="Samme båt, nesten samme vann, litt andre skyer." loading="lazy"></a>
+      <figcaption>Samme båt, nesten samme vann, litt andre skyer.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-09.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-09.jpg" alt="Borrevannet bred panorama i solskinn." loading="lazy"></a>
+      <figcaption>Borrevannet bred panorama i solskinn.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-borrevannet-sol-10.jpg" target="_blank"><img src="bilder/2024/web/drone-borrevannet-sol-10.jpg" alt="Borrevannet fra oven – siste lystime." loading="lazy"></a>
+      <figcaption>Borrevannet fra oven – siste lystime.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-refleksjon-kveld.jpg" target="_blank"><img src="bilder/2024/web/drone-refleksjon-kveld.jpg" alt="Borrevannet kveldspanorama med fiskebåt og perfekt skyreflek" loading="lazy"></a>
+      <figcaption>Borrevannet kveldspanorama med fiskebåt og perfekt skyrefleksjon.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-kveld-01.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-kveld-01.jpg" alt="Kveldsdrone – fiskebåten er fremdeles ute." loading="lazy"></a>
+      <figcaption>Kveldsdrone – fiskebåten er fremdeles ute.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-kveld-02.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-kveld-02.jpg" alt="Kveldsstemning fra dronen. Siste runde." loading="lazy"></a>
+      <figcaption>Kveldsstemning fra dronen. Siste runde.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-kveld-03.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-kveld-03.jpg" alt="Dronen og fiskerne avslutter dagen sammen." loading="lazy"></a>
+      <figcaption>Dronen og fiskerne avslutter dagen sammen.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/drone-bat-kveld-04.jpg" target="_blank"><img src="bilder/2024/web/drone-bat-kveld-04.jpg" alt="Kveldsfiske fra luften. Ro og mørke nærmer seg." loading="lazy"></a>
+      <figcaption>Kveldsfiske fra luften. Ro og mørke nærmer seg.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/mann-med-wobbler.jpg" target="_blank"><img src="bilder/2024/web/mann-med-wobbler.jpg" alt="Smilende mann viser frem grønn wobbler. Ikke gjedde, men vil" loading="lazy"></a>
+      <figcaption>Smilende mann viser frem grønn wobbler. Ikke gjedde, men vilje er det.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/abbor-i-havet.jpg" target="_blank"><img src="bilder/2024/web/abbor-i-havet.jpg" alt="Abbor i landingshøvet. Gul kniv parat. Saken er klar." loading="lazy"></a>
+      <figcaption>Abbor i landingshøvet. Gul kniv parat. Saken er klar.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-kveld-01.jpg" target="_blank"><img src="bilder/2024/web/fiske-kveld-01.jpg" alt="Fiskekveld på Borrevannet. Stemningen er høy." loading="lazy"></a>
+      <figcaption>Fiskekveld på Borrevannet. Stemningen er høy.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-kveld-02.jpg" target="_blank"><img src="bilder/2024/web/fiske-kveld-02.jpg" alt="Siste fisketur dag to. Optimistene er tilbake." loading="lazy"></a>
+      <figcaption>Siste fisketur dag to. Optimistene er tilbake.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fiske-kveld-03.jpg" target="_blank"><img src="bilder/2024/web/fiske-kveld-03.jpg" alt="Fiskebåten ved solnedgang. Det er alltid tid for én cast til" loading="lazy"></a>
+      <figcaption>Fiskebåten ved solnedgang. Det er alltid tid for én cast til.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/abbor-selfie.jpg" target="_blank"><img src="bilder/2024/web/abbor-selfie.jpg" alt="Mann poserer med abbor. Blikket sier: 'Dette er mine penger." loading="lazy"></a>
+      <figcaption>Mann poserer med abbor. Blikket sier: 'Dette er mine penger.'</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/fangst-og-pils.jpg" target="_blank"><img src="bilder/2024/web/fangst-og-pils.jpg" alt="Dagens resultat oppsummert: to gjedder og en øl. Festivalmål" loading="lazy"></a>
+      <figcaption>Dagens resultat oppsummert: to gjedder og en øl. Festivalmålestokk.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/roing-solnedgang-02.jpg" target="_blank"><img src="bilder/2024/web/roing-solnedgang-02.jpg" alt="Turkiskledd roer med hatten på i kveldsgull. Festivalens mes" loading="lazy"></a>
+      <figcaption>Turkiskledd roer med hatten på i kveldsgull. Festivalens mest ikoniske farge.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/kveldsmat-ute.jpg" target="_blank"><img src="bilder/2024/web/kveldsmat-ute.jpg" alt="Tre gutter spiser ute ved det nye bordet. AXE 10% holder sel" loading="lazy"></a>
+      <figcaption>Tre gutter spiser ute ved det nye bordet. AXE 10% holder selskap.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/kveldsmat-ute-02.jpg" target="_blank"><img src="bilder/2024/web/kveldsmat-ute-02.jpg" alt="Kveldsmåltid nummer to. Maten er god, stemningen bedre." loading="lazy"></a>
+      <figcaption>Kveldsmåltid nummer to. Maten er god, stemningen bedre.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/borrevannet-natt-01.jpg" target="_blank"><img src="bilder/2024/web/borrevannet-natt-01.jpg" alt="Borrevannet i blåtimen. Brygga og båtene hviler etter lang d" loading="lazy"></a>
+      <figcaption>Borrevannet i blåtimen. Brygga og båtene hviler etter lang dag.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/borrevannet-natt-02.jpg" target="_blank"><img src="bilder/2024/web/borrevannet-natt-02.jpg" alt="Nattlig Borrevannet fra land. Tausheten er festivalens still" loading="lazy"></a>
+      <figcaption>Nattlig Borrevannet fra land. Tausheten er festivalens stilleste øyeblikk.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2024/web/bater-brygge-blatiime.jpg" target="_blank"><img src="bilder/2024/web/bater-brygge-blatiime.jpg" alt="Tre båter ved brygga i blåtimen. Det vakreste bildet fra 202" loading="lazy"></a>
+      <figcaption>Tre båter ved brygga i blåtimen. Det vakreste bildet fra 2024.</figcaption>
+    </figure>
+  </div>
 
 </main>
 
