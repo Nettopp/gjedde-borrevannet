@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gjeddefestivalen 2020 &mdash; Borrevannet</title>
-  <style>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import os
+import datetime
+
+OUT = os.path.dirname(os.path.abspath(__file__))
+
+
+def extend_date(iso):
+    d = datetime.date.fromisoformat(iso)
+    if d.weekday() in (4, 5):  # fredag=4, lørdag=5
+        return (d + datetime.timedelta(days=1)).isoformat()
+    return iso
+
+
+def date_range_label(start_iso, end_iso):
+    s = datetime.date.fromisoformat(start_iso)
+    e = datetime.date.fromisoformat(end_iso)
+    months = ['jan','feb','mar','apr','mai','jun','jul','aug','sep','okt','nov','des']
+    if start_iso == end_iso:
+        return f"{s.day}. {months[s.month - 1]}"
+    return f"{s.day}.–{e.day}. {months[s.month - 1]}"
+
+
+YEARS_RAW = [
+    {"year": 2025, "start": "2025-05-23", "location": "Borrevannet"},
+    {"year": 2024, "start": "2024-05-24", "location": "Borrevannet"},
+    {"year": 2021, "start": "2021-05-22", "location": "Borrevannet"},
+    {"year": 2020, "start": "2020-05-15", "location": "Borrevannet"},
+    {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta"},
+    {"year": 2018, "start": "2018-05-26", "location": "Borrevannet"},
+    {"year": 2017, "start": "2017-05-24", "location": "Borrevannet"},
+]
+
+for y in YEARS_RAW:
+    y["end"]       = extend_date(y["start"])
+    y["multiday"]  = y["start"] != y["end"]
+    y["label"]     = date_range_label(y["start"], y["end"])
+    s = datetime.date.fromisoformat(y["start"])
+    e = datetime.date.fromisoformat(y["end"])
+    months_no = ['januar','februar','mars','april','mai','juni','juli','august',
+                 'september','oktober','november','desember']
+    if not y["multiday"]:
+        y["date_no"] = f"{s.day}. {months_no[s.month-1]} {s.year}"
+    else:
+        y["date_no"] = f"{s.day}.–{e.day}. {months_no[s.month-1]} {s.year}"
+
+
+CSS = """\
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -211,76 +253,18 @@
     .wx-stats-wrap { overflow-x: auto; margin-top: 1.2rem; }
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
-    .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-</head>
-<body>
+    .wx-stats-wrap td { padding: 0.4rem 0.6rem; }"""
 
-<nav>
-  <a href="index.html" class="brand">Borrevannet</a>
-  <a href="index.html">Om vannet</a>
-  <a href="gjeddefiske.html">Gjeddefiske &amp; festival</a>
-  <a href="festivallogg.html" class="active">Festivallogg</a>
-</nav>
 
-<header>
-  <h1>Gjeddefestivalen 2020</h1>
-  <p>15.–16. mai &nbsp;&middot;&nbsp; Borrevannet</p>
-</header>
-
-<main>
-
-  <a href="festivallogg.html" class="back-link">&#8592; Alle festivaler</a>
-
-  <div class="meta-grid">
-    <div class="meta-item">
-      <div class="label">Dato</div>
-      <div class="value">15.–16. mai 2020</div>
-    </div>
-    <div class="meta-item">
-      <div class="label">Sted</div>
-      <div class="value">Borrevannet</div>
-    </div>
-  </div>
-
-  <h3>Timevis v&aelig;r &mdash; 15.–16. mai</h3>
-  <div class="weather-widget">
-    <p class="wx-loading" id="wx-loading">Henter historiske v&aelig;rdata fra Borrevannet&hellip;</p>
-    <p class="wx-error" id="wx-error" style="display:none"></p>
-    <div id="wx-content" style="display:none">
-      <div class="wx-section">
-        <div class="wx-section-label">Temperatur &amp; skydekke</div>
-        <div style="height:150px;position:relative"><canvas id="wx-temp"></canvas></div>
-      </div>
-      <div class="wx-section">
-        <div class="wx-section-label">Vind &amp; nedb&oslash;r</div>
-        <div style="height:100px;position:relative"><canvas id="wx-wind"></canvas></div>
-      </div>
-      <div id="wx-stats"></div>
-    </div>
-  </div>
-
-  <h3>Fangst</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
-
-  <h3>Historier og hendelser</h3>
-  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
-
-</main>
-
-<footer>
-  Borrevannet, Horten &mdash; Vestfold
-</footer>
-
-<script>
+# JS template — uses %%START%% and %%END%% as placeholders
+JS_TEMPLATE = """\
 (function () {
   var LAT = 59.4119, LON = 10.4677;
-  var START = '2020-05-15', END = '2020-05-16';
+  var START = '%%START%%', END = '%%END%%';
   var MULTIDAY = START !== END;
   var GRID = 'rgba(46,64,40,0.55)', MUTED = '#7a9970', FG = '#d6e8cf';
-  var NO_DAYS_S = ['s\u00f8','ma','ti','on','to','fr','l\u00f8'];
-  var NO_DAYS_F = ['S\u00f8ndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','L\u00f8rdag'];
+  var NO_DAYS_S = ['s\\u00f8','ma','ti','on','to','fr','l\\u00f8'];
+  var NO_DAYS_F = ['S\\u00f8ndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','L\\u00f8rdag'];
   var NO_MON   = ['januar','februar','mars','april','mai','juni',
                   'juli','august','september','oktober','november','desember'];
 
@@ -292,7 +276,7 @@
   function makeLabel(t) {
     var d = new Date(t);
     var hh = String(d.getHours()).padStart(2, '0') + ':00';
-    return MULTIDAY ? NO_DAYS_S[d.getDay()] + '\u00a0' + hh : hh;
+    return MULTIDAY ? NO_DAYS_S[d.getDay()] + '\\u00a0' + hh : hh;
   }
 
   function avg(arr) {
@@ -310,13 +294,13 @@
       if (h.cloudcover[i]     !== null) byDay[day].cloud.push(h.cloudcover[i]);
     });
 
-    function f1(v) { return v !== null ? v.toFixed(1) : '\u2014'; }
-    function f0(v) { return v !== null ? Math.round(v).toString() : '\u2014'; }
+    function f1(v) { return v !== null ? v.toFixed(1) : '\\u2014'; }
+    function f0(v) { return v !== null ? Math.round(v).toString() : '\\u2014'; }
 
     var rows = Object.entries(byDay).map(function (entry) {
       var day = entry[0], d = entry[1];
       var dt = new Date(day + 'T12:00:00');
-      var label = NO_DAYS_F[dt.getDay()] + ' ' + dt.getDate() + '.\u00a0' + NO_MON[dt.getMonth()];
+      var label = NO_DAYS_F[dt.getDay()] + ' ' + dt.getDate() + '.\\u00a0' + NO_MON[dt.getMonth()];
       var tMax  = d.temp.length  ? Math.max.apply(null, d.temp)  : null;
       var tMin  = d.temp.length  ? Math.min.apply(null, d.temp)  : null;
       var tAvg  = avg(d.temp);
@@ -330,26 +314,26 @@
         + '<td>' + f1(tAvg) + '</td>'
         + '<td>' + f1(rain) + '</td>'
         + '<td>' + f1(wMax) + '</td>'
-        + '<td>' + f0(cAvg) + '\u00a0%</td>'
+        + '<td>' + f0(cAvg) + '\\u00a0%</td>'
         + '<td>' + sunH + '</td></tr>';
     });
 
     return '<div class="wx-stats-wrap"><table>'
       + '<thead><tr>'
       + '<th>Dag</th>'
-      + '<th>Maks\u00a0\u00b0C</th>'
-      + '<th>Min\u00a0\u00b0C</th>'
-      + '<th>Gj.snitt\u00a0\u00b0C</th>'
-      + '<th>Nedb\u00f8r\u00a0mm</th>'
-      + '<th>Maks\u00a0vind\u00a0m/s</th>'
+      + '<th>Maks\\u00a0\\u00b0C</th>'
+      + '<th>Min\\u00a0\\u00b0C</th>'
+      + '<th>Gj.snitt\\u00a0\\u00b0C</th>'
+      + '<th>Nedb\\u00f8r\\u00a0mm</th>'
+      + '<th>Maks\\u00a0vind\\u00a0m/s</th>'
       + '<th>Skydekke</th>'
-      + '<th>Soltimer\u00b9</th>'
+      + '<th>Soltimer\\u00b9</th>'
       + '</tr></thead>'
       + '<tbody>' + rows.join('') + '</tbody>'
       + '</table></div>'
       + '<p class="wx-source" style="margin-top:4px">'
-      + '\u00b9 Timer med skydekke under 30\u00a0%'
-      + ' \u00b7 Kilde: Open-Meteo / ERA5 \u00b7 Borrevannet, Horten'
+      + '\\u00b9 Timer med skydekke under 30\\u00a0%'
+      + ' \\u00b7 Kilde: Open-Meteo / ERA5 \\u00b7 Borrevannet, Horten'
       + '</p>';
   }
 
@@ -363,7 +347,7 @@
         labels: labels,
         datasets: [
           {
-            label: 'Temperatur (\u00b0C)',
+            label: 'Temperatur (\\u00b0C)',
             data: h.temperature_2m,
             borderColor: '#7ab868',
             backgroundColor: 'rgba(122,184,104,0.13)',
@@ -390,12 +374,12 @@
           x: { grid: { color: GRID }, ticks: { color: MUTED, maxTicksLimit: 12, font: { size: 10 } } },
           yT: {
             type: 'linear', position: 'left',
-            title: { display: true, text: '\u00b0C', color: MUTED, font: { size: 11 } },
+            title: { display: true, text: '\\u00b0C', color: MUTED, font: { size: 11 } },
             grid: { color: GRID }, ticks: { color: MUTED, font: { size: 10 } }
           },
           yC: {
             type: 'linear', position: 'right', min: 0, max: 100,
-            title: { display: true, text: 'skyer\u00a0%', color: MUTED, font: { size: 11 } },
+            title: { display: true, text: 'skyer\\u00a0%', color: MUTED, font: { size: 11 } },
             grid: { display: false },
             ticks: { color: MUTED, font: { size: 10 }, stepSize: 25,
                      callback: function (v) { return v + '%'; } }
@@ -419,7 +403,7 @@
             fill: false, tension: 0.3, yAxisID: 'yW', order: 1
           },
           {
-            label: 'Nedb\u00f8r (mm)',
+            label: 'Nedb\\u00f8r (mm)',
             data: h.precipitation,
             type: 'bar',
             backgroundColor: 'rgba(85,153,221,0.5)',
@@ -473,11 +457,105 @@
     .catch(function (e) {
       document.getElementById('wx-loading').style.display = 'none';
       var err = document.getElementById('wx-error');
-      err.textContent = 'Kunne ikke hente v\u00e6rdata: ' + e.message;
+      err.textContent = 'Kunne ikke hente v\\u00e6rdata: ' + e.message;
       err.style.display = 'block';
     });
-})();
+})();"""
+
+
+def make_page(y):
+    year      = y["year"]
+    start     = y["start"]
+    end       = y["end"]
+    label     = y["label"]       # e.g. "23.–24. mai"
+    date_no   = y["date_no"]     # e.g. "23.–24. mai 2025"
+    location  = y["location"]
+    js = JS_TEMPLATE.replace("%%START%%", start).replace("%%END%%", end)
+
+    return f"""<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gjeddefestivalen {year} &mdash; {location}</title>
+  <style>
+{CSS}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Borrevannet</a>
+  <a href="index.html">Om vannet</a>
+  <a href="gjeddefiske.html">Gjeddefiske &amp; festival</a>
+  <a href="festivallogg.html" class="active">Festivallogg</a>
+</nav>
+
+<header>
+  <h1>Gjeddefestivalen {year}</h1>
+  <p>{label} &nbsp;&middot;&nbsp; {location}</p>
+</header>
+
+<main>
+
+  <a href="festivallogg.html" class="back-link">&#8592; Alle festivaler</a>
+
+  <div class="meta-grid">
+    <div class="meta-item">
+      <div class="label">Dato</div>
+      <div class="value">{date_no}</div>
+    </div>
+    <div class="meta-item">
+      <div class="label">Sted</div>
+      <div class="value">{location}</div>
+    </div>
+  </div>
+
+  <h3>Timevis v&aelig;r &mdash; {label}</h3>
+  <div class="weather-widget">
+    <p class="wx-loading" id="wx-loading">Henter historiske v&aelig;rdata fra Borrevannet&hellip;</p>
+    <p class="wx-error" id="wx-error" style="display:none"></p>
+    <div id="wx-content" style="display:none">
+      <div class="wx-section">
+        <div class="wx-section-label">Temperatur &amp; skydekke</div>
+        <div style="height:150px;position:relative"><canvas id="wx-temp"></canvas></div>
+      </div>
+      <div class="wx-section">
+        <div class="wx-section-label">Vind &amp; nedb&oslash;r</div>
+        <div style="height:100px;position:relative"><canvas id="wx-wind"></canvas></div>
+      </div>
+      <div id="wx-stats"></div>
+    </div>
+  </div>
+
+  <h3>Fangst</h3>
+  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+
+  <h3>Historier og hendelser</h3>
+  <p class="not-logged">Ikke loggf&oslash;rt for dette &aring;ret.</p>
+
+</main>
+
+<footer>
+  Borrevannet, Horten &mdash; Vestfold
+</footer>
+
+<script>
+{js}
 </script>
 
 </body>
 </html>
+"""
+
+
+for y in YEARS_RAW:
+    fname = f"festivallogg-{y['year']}.html"
+    path  = os.path.join(OUT, fname)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(make_page(y))
+    end_info = f" -> {y['end']}" if y["multiday"] else ""
+    print(f"  {fname}  ({y['start']}{end_info})")
+
+print("Ferdig.")

@@ -261,6 +261,10 @@
       margin-top: 8px;
       text-align: right;
     }
+    .wx-stats-wrap { overflow-x: auto; margin-top: 1.2rem; }
+    .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
+    .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
+    .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -354,7 +358,7 @@
         <div class="wx-section-label">Vind &amp; nedbør</div>
         <div style="height:100px;position:relative"><canvas id="wx-wind"></canvas></div>
       </div>
-      <p class="wx-source">Kilde: Open-Meteo / ERA5 · Borrevannet, Horten</p>
+      <div id="wx-stats"></div>
     </div>
   </div>
 
@@ -522,6 +526,8 @@
 (function () {
   const LAT = 59.4119, LON = 10.4677;
   const GRID = 'rgba(46,64,40,0.55)', MUTED = '#7a9970', FG = '#d6e8cf';
+  const NO_DAYS_F = ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'];
+  const NO_MON = ['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
 
   const tooltipDefaults = {
     backgroundColor: '#1d2b1a',
@@ -550,6 +556,46 @@
     const data = await resp.json();
     if (data.error) throw new Error(data.reason || 'API-feil');
     return data;
+  }
+
+  function avg(arr) {
+    return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null;
+  }
+
+  function buildStats(h) {
+    const byDay = {};
+    h.time.forEach((t, i) => {
+      const day = t.slice(0, 10);
+      if (!byDay[day]) byDay[day] = { temp: [], precip: [], wind: [], cloud: [] };
+      if (h.temperature_2m[i] !== null) byDay[day].temp.push(h.temperature_2m[i]);
+      if (h.precipitation[i]  !== null) byDay[day].precip.push(h.precipitation[i]);
+      if (h.windspeed_10m[i]  !== null) byDay[day].wind.push(h.windspeed_10m[i]);
+      if (h.cloudcover[i]     !== null) byDay[day].cloud.push(h.cloudcover[i]);
+    });
+    const f1 = v => v !== null ? v.toFixed(1) : '—';
+    const f0 = v => v !== null ? Math.round(v).toString() : '—';
+    const rows = Object.entries(byDay).map(([day, d]) => {
+      const dt   = new Date(day + 'T12:00:00');
+      const label = NO_DAYS_F[dt.getDay()] + ' ' + dt.getDate() + '. ' + NO_MON[dt.getMonth()];
+      const tMax = d.temp.length  ? Math.max(...d.temp)  : null;
+      const tMin = d.temp.length  ? Math.min(...d.temp)  : null;
+      const tAvg = avg(d.temp);
+      const rain = d.precip.length ? d.precip.reduce((a, b) => a + b, 0) : null;
+      const wMax = d.wind.length  ? Math.max(...d.wind)  : null;
+      const cAvg = avg(d.cloud);
+      const sunH = d.cloud.filter(c => c < 30).length;
+      return `<tr><td>${label}</td><td>${f1(tMax)}</td><td>${f1(tMin)}</td>`
+        + `<td>${f1(tAvg)}</td><td>${f1(rain)}</td><td>${f1(wMax)}</td>`
+        + `<td>${f0(cAvg)} %</td><td>${sunH}</td></tr>`;
+    });
+    return '<div class="wx-stats-wrap"><table>'
+      + '<thead><tr><th>Dag</th><th>Maks °C</th><th>Min °C</th>'
+      + '<th>Gj.snitt °C</th><th>Nedbør mm</th>'
+      + '<th>Maks vind m/s</th><th>Skydekke</th><th>Soltimer¹</th>'
+      + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'
+      + '<p class="wx-source" style="margin-top:4px">'
+      + '¹ Timer med skydekke under 30 %'
+      + ' · Kilde: Open-Meteo / ERA5 · Borrevannet, Horten</p>';
   }
 
   function buildCharts(data) {
@@ -680,6 +726,7 @@
       },
     });
 
+    document.getElementById('wx-stats').innerHTML = buildStats(h);
     document.getElementById('wx-loading').style.display = 'none';
     document.getElementById('wx-content').style.display = 'block';
   }
