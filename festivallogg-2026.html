@@ -279,7 +279,7 @@
 
 <header>
   <h1>Gjeddefestivalen 2026</h1>
-  <p>Fredag 30. – lørdag 31. mai &nbsp;·&nbsp; Borrevannet</p>
+  <p>Fredag 29. – lørdag 30. mai &nbsp;·&nbsp; Borrevannet</p>
 </header>
 
 <main>
@@ -289,7 +289,7 @@
   <div class="meta-grid">
     <div class="meta-item">
       <div class="label">Dato</div>
-      <div class="value">30.–31. mai 2026</div>
+      <div class="value">29.–30. mai 2026</div>
     </div>
     <div class="meta-item">
       <div class="label">Deltakere</div>
@@ -345,7 +345,7 @@
     </tbody>
   </table>
 
-  <h3>Timevis vær — 30.–31. mai</h3>
+  <h3>Timevis vær — 29.–30. mai</h3>
   <div class="weather-widget">
     <p class="wx-loading" id="wx-loading">Henter historiske værdata fra Borrevannet…</p>
     <p class="wx-error" id="wx-error" style="display:none"></p>
@@ -547,7 +547,7 @@
   async function loadWeather() {
     const url = 'https://archive-api.open-meteo.com/v1/archive' +
       '?latitude=' + LAT + '&longitude=' + LON +
-      '&start_date=2026-05-30&end_date=2026-05-31' +
+      '&start_date=2026-05-29&end_date=2026-05-30' +
       '&hourly=temperature_2m,precipitation,windspeed_10m,cloudcover' +
       '&timezone=Europe%2FOslo&wind_speed_unit=ms';
 
@@ -602,7 +602,7 @@
     const h = data.hourly;
     const idx = h.time
       .map((t, i) => i)
-      .filter(i => h.time[i] >= '2026-05-30T08:00' && h.time[i] <= '2026-05-31T16:00');
+      .filter(i => h.time[i] >= '2026-05-29T08:00' && h.time[i] <= '2026-05-30T16:00');
 
     const labels = idx.map(i => dayLabel(h.time[i]));
     const temp   = idx.map(i => h.temperature_2m[i]);

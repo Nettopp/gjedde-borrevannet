@@ -39,7 +39,7 @@ def _build_festivals():
         2021: datetime.date(2021, 5, 22),
         2024: datetime.date(2024, 5, 24),
         2025: datetime.date(2025, 5, 23),
-        2026: datetime.date(2026, 5, 30),
+        2026: datetime.date(2026, 5, 29),
     }
     result = {}
     for year, start in start_dates.items():
