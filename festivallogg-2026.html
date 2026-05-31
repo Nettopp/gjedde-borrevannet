@@ -185,17 +185,23 @@
 
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 6px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
       margin-top: 0.8rem;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
     }
 
     .photo-grid a {
       display: block;
       aspect-ratio: 4/3;
       overflow: hidden;
-      border-radius: 4px;
-      border: 1px solid var(--border);
     }
 
     .photo-grid img {
@@ -209,6 +215,13 @@
     .photo-grid a:hover img {
       transform: scale(1.04);
       opacity: 0.9;
+    }
+
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
     }
 
     a { color: var(--link); text-decoration: none; }
@@ -321,32 +334,137 @@
 
   <h3>Bilder</h3>
   <div class="photo-grid">
-    <a href="bilder/2026/web/IMG_9382.jpg" target="_blank"><img src="bilder/2026/web/IMG_9382.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9425.jpg" target="_blank"><img src="bilder/2026/web/IMG_9425.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9426.jpg" target="_blank"><img src="bilder/2026/web/IMG_9426.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9427.jpg" target="_blank"><img src="bilder/2026/web/IMG_9427.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9428.jpg" target="_blank"><img src="bilder/2026/web/IMG_9428.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9429.jpg" target="_blank"><img src="bilder/2026/web/IMG_9429.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9437.jpg" target="_blank"><img src="bilder/2026/web/IMG_9437.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9446.jpg" target="_blank"><img src="bilder/2026/web/IMG_9446.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/IMG_9448.jpg" target="_blank"><img src="bilder/2026/web/IMG_9448.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/7B7CB5BAB2D8FE4D1F062E37BAD6F729.jpg" target="_blank"><img src="bilder/2026/web/7B7CB5BAB2D8FE4D1F062E37BAD6F729.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/8A07090B7394F52F1F32CB449A01DB84.jpg" target="_blank"><img src="bilder/2026/web/8A07090B7394F52F1F32CB449A01DB84.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/8C317353B2E18F623D207C2FF4BB6B9B.jpg" target="_blank"><img src="bilder/2026/web/8C317353B2E18F623D207C2FF4BB6B9B.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/96802F99D30737BCEA57CF5C8E0AAF5C.jpg" target="_blank"><img src="bilder/2026/web/96802F99D30737BCEA57CF5C8E0AAF5C.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/AF963999804DDCB4D523ABE367176D67.jpg" target="_blank"><img src="bilder/2026/web/AF963999804DDCB4D523ABE367176D67.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/B6F3CE417B69B3929CE75F1276BF85FF.jpg" target="_blank"><img src="bilder/2026/web/B6F3CE417B69B3929CE75F1276BF85FF.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/E6220E18FB28FAD37670BDBB026F049F.jpg" target="_blank"><img src="bilder/2026/web/E6220E18FB28FAD37670BDBB026F049F.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/FDF7E41C26A758CB5EC67F9C5E12320A.jpg" target="_blank"><img src="bilder/2026/web/FDF7E41C26A758CB5EC67F9C5E12320A.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/cc7a9520b5d898ce942d28cf338c29cf.jpeg" target="_blank"><img src="bilder/2026/web/cc7a9520b5d898ce942d28cf338c29cf.jpeg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/688424748_4609876275953577_3747933405264698614_n.jpg" target="_blank"><img src="bilder/2026/web/688424748_4609876275953577_3747933405264698614_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/705646977_857522410151022_511548412699991283_n.jpg" target="_blank"><img src="bilder/2026/web/705646977_857522410151022_511548412699991283_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/706015865_1461285165321331_2714403889180476394_n.jpg" target="_blank"><img src="bilder/2026/web/706015865_1461285165321331_2714403889180476394_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/706663242_1006542998729385_2255615733411171623_n.jpg" target="_blank"><img src="bilder/2026/web/706663242_1006542998729385_2255615733411171623_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/707187550_1665890258079630_7155192594549542730_n.jpg" target="_blank"><img src="bilder/2026/web/707187550_1665890258079630_7155192594549542730_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/708752716_830011106854066_507261560861423216_n.jpg" target="_blank"><img src="bilder/2026/web/708752716_830011106854066_507261560861423216_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/708832717_971247935668291_8467562654413707358_n.jpg" target="_blank"><img src="bilder/2026/web/708832717_971247935668291_8467562654413707358_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
-    <a href="bilder/2026/web/710868000_2244310832773280_4731530966060751638_n.jpg" target="_blank"><img src="bilder/2026/web/710868000_2244310832773280_4731530966060751638_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+
+    <figure>
+      <a href="bilder/2026/web/drone-borrevannet-soloppgang.jpg" target="_blank"><img src="bilder/2026/web/drone-borrevannet-soloppgang.jpg" alt="Borrevannet ved soloppgang" loading="lazy"></a>
+      <figcaption>Borrevannet ved soloppgang — det er for dette vi er her</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/brygga-avgang-solnedgang.jpg" target="_blank"><img src="bilder/2026/web/brygga-avgang-solnedgang.jpg" alt="Avgang fra brygga" loading="lazy"></a>
+      <figcaption>Avgang fra Natursenteret. Noen er klare. Noen er klare for en kopp kaffe.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/drone-bat-tidlig-ute.jpg" target="_blank"><img src="bilder/2026/web/drone-bat-tidlig-ute.jpg" alt="Båt på vannet tidlig morgen" loading="lazy"></a>
+      <figcaption>Jon og Jarle på morgenvakt. De andre sov. Det forklarer mye.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/tre-menn-i-bat-ovenfra.jpg" target="_blank"><img src="bilder/2026/web/tre-menn-i-bat-ovenfra.jpg" alt="Tre menn i båt sett ovenfra" loading="lazy"></a>
+      <figcaption>Tre mann i én båt — sett ovenfra er det overraskende lite orden</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/jarle-fisker-staar-i-bat.jpg" target="_blank"><img src="bilder/2026/web/jarle-fisker-staar-i-bat.jpg" alt="Jarle fisker stående i båt" loading="lazy"></a>
+      <figcaption>Jarle i kampstilling. Gjedda i nærheten er varslet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/jakke-og-stang-i-bat.jpg" target="_blank"><img src="bilder/2026/web/jakke-og-stang-i-bat.jpg" alt="Fisker i jakke med stang" loading="lazy"></a>
+      <figcaption>Fredag morgen: hette på, vind fra sør, ingen klager</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/kast-mot-bla-himmel.jpg" target="_blank"><img src="bilder/2026/web/kast-mot-bla-himmel.jpg" alt="Kast mot blå himmel" loading="lazy"></a>
+      <figcaption>Perfekt kast mot perfekt himmel — lørdag leverte på alle fronter</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/paal-ror-solskinn-lordag.jpg" target="_blank"><img src="bilder/2026/web/paal-ror-solskinn-lordag.jpg" alt="Pål ror på lørdag" loading="lazy"></a>
+      <figcaption>Pål på lørdag — styrmann, kokk og motivasjonssjef. Ingen stang i sikte.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/jarle-stor-gjedde-fredag.jpg" target="_blank"><img src="bilder/2026/web/jarle-stor-gjedde-fredag.jpg" alt="Jarle med stor gjedde" loading="lazy"></a>
+      <figcaption>Jarle med en solid fredagsfangst. Ansiktet sier alt.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/gjedde-holdt-vertikalt-fredag.jpg" target="_blank"><img src="bilder/2026/web/gjedde-holdt-vertikalt-fredag.jpg" alt="Gjedde holdt vertikalt" loading="lazy"></a>
+      <figcaption>En godkjent eksemplar — hodegrepet sørget for at den ikke stakk av</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/marius-gjedde-hette.jpg" target="_blank"><img src="bilder/2026/web/marius-gjedde-hette.jpg" alt="Marius med gjedde" loading="lazy"></a>
+      <figcaption>Marius med dagens fangst — hetten er ikke av, fisken er det heller ikke</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/kristian-rod-solbrille-gjedde.jpg" target="_blank"><img src="bilder/2026/web/kristian-rod-solbrille-gjedde.jpg" alt="Kristian med rød solbrille og gjedde" loading="lazy"></a>
+      <figcaption>Kristian med sin første — rødbrillene var ikke planlagt, fisken heller ikke</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/kristian-stor-gjedde-en-haand.jpg" target="_blank"><img src="bilder/2026/web/kristian-stor-gjedde-en-haand.jpg" alt="Kristian løfter stor gjedde i én hånd" loading="lazy"></a>
+      <figcaption>Kristian tar den i én hånd. To hender er for nybegynnere.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/kristian-gjedde-agn-kasse.jpg" target="_blank"><img src="bilder/2026/web/kristian-gjedde-agn-kasse.jpg" alt="Kristian med gjedde og agn-kasse" loading="lazy"></a>
+      <figcaption>Storauren kobber leverte nok en gang. Agn-kassen vitner om forberedelse.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/kristian-gjedde-solskinn-2.jpg" target="_blank"><img src="bilder/2026/web/kristian-gjedde-solskinn-2.jpg" alt="Kristian med gjedde i solskinn" loading="lazy"></a>
+      <figcaption>Nummer to av de store — og den spjæller like mye</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/gjedde-storauren-kobber.jpg" target="_blank"><img src="bilder/2026/web/gjedde-storauren-kobber.jpg" alt="Gjedde tatt på Storauren kobber" loading="lazy"></a>
+      <figcaption>Storauren kobber på blokka igjen. Gjedda visste ikke hva som traff den.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/gjedde-slippes-tilbake.jpg" target="_blank"><img src="bilder/2026/web/gjedde-slippes-tilbake.jpg" alt="Gjedde slippes tilbake i vannet" loading="lazy"></a>
+      <figcaption>Gjensyn. Den vet veien hjem nå.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/grilling-biff-og-mais.jpg" target="_blank"><img src="bilder/2026/web/grilling-biff-og-mais.jpg" alt="Grilling av biff og mais" loading="lazy"></a>
+      <figcaption>Festivalmenyen 2026. Ingen spiste mais.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/biff-bakt-potet-tallerken.jpg" target="_blank"><img src="bilder/2026/web/biff-bakt-potet-tallerken.jpg" alt="Biff og bakt potet" loading="lazy"></a>
+      <figcaption>Den offisielle festivaltallerkenen. Gjedda slipper.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/middag-ute-tre-menn.jpg" target="_blank"><img src="bilder/2026/web/middag-ute-tre-menn.jpg" alt="Tre menn spiser middag ute" loading="lazy"></a>
+      <figcaption>Velfortjent middag. Ingen nevnte gjedde på nesten 20 minutter.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/marius-polse-og-ol.jpg" target="_blank"><img src="bilder/2026/web/marius-polse-og-ol.jpg" alt="Marius med pølse og øl" loading="lazy"></a>
+      <figcaption>Marius med høyprioritet-oppgave. Gjedda kan vente.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/jon-slokner-kveld.jpg" target="_blank"><img src="bilder/2026/web/jon-slokner-kveld.jpg" alt="Jon slukner om kvelden" loading="lazy"></a>
+      <figcaption>Jon klokken 22:47. Sluknet 13 minutter senere. Loggført.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/jon-sover-pa-sofaen.jpg" target="_blank"><img src="bilder/2026/web/jon-sover-pa-sofaen.jpg" alt="Jon sover på sofaen" loading="lazy"></a>
+      <figcaption>Jon neste morgen — dokumentert av øyenvitner</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/koye-telefon-natt.jpg" target="_blank"><img src="bilder/2026/web/koye-telefon-natt.jpg" alt="Person i køye med telefon om natten" loading="lazy"></a>
+      <figcaption>Sovekøye kl. 23. Kristian sov ute i hengekøye og slapp dette synet.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/drone-borrevannet-aker-oslofjord.jpg" target="_blank"><img src="bilder/2026/web/drone-borrevannet-aker-oslofjord.jpg" alt="Borrevannet fra lufta med åkre og fjord" loading="lazy"></a>
+      <figcaption>Borrevannet fra lufta — gjedda er overalt her nede, selv om det ikke ser slik ut</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2026/web/drone-horten-fjord-oversikt.jpg" target="_blank"><img src="bilder/2026/web/drone-horten-fjord-oversikt.jpg" alt="Horten og Oslofjorden fra drone" loading="lazy"></a>
+      <figcaption>Horten og Oslofjorden fra lufta. Gjedda er ikke her, men utsikten er fri.</figcaption>
+    </figure>
+
   </div>
 
 </main>
