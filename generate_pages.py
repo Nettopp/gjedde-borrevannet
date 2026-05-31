@@ -68,7 +68,7 @@ YEARS_RAW = [
         "Jarle tok en på 3 kg.",
         '<a href="https://www.nb.no/items/URN:NBN:no-nb_digibok_2013101408208" target="_blank" rel="noopener">Lesestoff for turen (Nasjonalbiblioteket)</a>',
     ]},
-    {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta", "notes": [
+    {"year": 2019, "start": "2019-05-25", "location": "Speiderhytta", "youtube": "NSjiTphUOgE", "notes": [
         "Jon tok en på 9,4 kg – festivalrekord!",
     ]},
     {"year": 2018, "start": "2018-05-26", "location": "Knudsrødhytta", "youtube": "YCqZ8zWx9s8"},
