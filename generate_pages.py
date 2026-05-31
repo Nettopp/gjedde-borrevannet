@@ -53,7 +53,10 @@ YEARS_RAW = [
     {"year": 2024, "start": "2024-05-24", "location": "Knudsrødhytta", "notes": [
         "Sondre var ikke med; ellers de vanlige.",
     ]},
-    {"year": 2022, "start": "2022-05-27", "location": "Knudsrødhytta", "youtube": "i3KT04-dD84"},
+    {"year": 2022, "start": "2022-05-27", "location": "Knudsrødhytta", "youtube": "i3KT04-dD84", "notes": [
+        "Deltakere: Pål, Jarle, Jon og Kristian.",
+        "Nakenbading, vind og surt vær.",
+    ]},
     {"year": 2021, "start": "2021-05-21", "location": "Knudsrødhytta", "youtube": "ue1HVleq134", "notes": [
         "Tre båter: Jæger- og fiskeforeningen, Umulige Trær og Jarles båt.",
         "Alle seks deltok på festivalen.",
