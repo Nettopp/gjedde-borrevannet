@@ -90,162 +90,57 @@
       padding: 2.5rem 1.5rem 4rem;
     }
 
-    .year-section {
-      margin-bottom: 3.5rem;
-    }
-
-    .year-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--accent);
-    }
-
-    .year-header h2 {
-      font-size: 1.6rem;
-      color: var(--heading);
-      font-weight: 700;
-    }
-
-    .year-header .year-sub {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .meta-grid {
+    .year-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.8rem;
-      margin-bottom: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
     }
 
-    .meta-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.7rem 1rem;
-    }
-
-    .meta-item .label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .meta-item .value {
-      color: var(--heading);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .meta-item .value.placeholder {
-      color: var(--text-muted);
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0 1.5rem;
-      font-size: 0.93rem;
-    }
-
-    th {
-      background: var(--surface2);
-      color: var(--accent-light);
-      font-weight: 600;
-      text-align: left;
-      padding: 0.6rem 0.8rem;
-      border-bottom: 2px solid var(--border);
-    }
-
-    td {
-      padding: 0.55rem 0.8rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    tr:last-child td { border-bottom: none; }
-    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-
-    h3 {
-      font-size: 1rem;
-      color: var(--accent-light);
-      font-weight: 600;
-      margin: 1.5rem 0 0.6rem;
-    }
-
-    p { margin-bottom: 0.9rem; color: var(--text); }
-
-    .report {
+    .year-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.6rem 1.8rem;
-      margin-top: 1.2rem;
+      padding: 1.4rem 1.6rem;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+      display: block;
     }
 
-    .report-meta {
-      font-size: 0.82rem;
+    .year-card:hover {
+      border-color: var(--accent);
+      background: var(--surface2);
+      text-decoration: none;
+    }
+
+    .year-card .year-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .year-card .year-date {
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-bottom: 1.2rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.8rem;
     }
 
-    .report-body {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 0.97rem;
-      line-height: 1.85;
+    .year-card .year-facts {
+      font-size: 0.88rem;
       color: var(--text);
+      list-style: none;
     }
 
-    .report-body p { margin-bottom: 1rem; }
+    .year-card .year-facts li {
+      padding: 0.15rem 0;
+    }
 
-    .report-body blockquote {
-      border-left: 3px solid var(--accent);
-      margin: 1rem 0;
-      padding: 0.4rem 1rem;
+    .year-card .year-facts li span {
       color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .report-body .signature {
-      margin-top: 1.5rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .uncertain {
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .transcription-note {
-      background: #1a1f12;
-      border: 1px solid #3a4a2a;
-      border-radius: 6px;
-      padding: 0.7rem 1rem;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .pending-badge {
+      font-size: 0.8rem;
       display: inline-block;
-      background: #2a2010;
-      border: 1px solid #5a4a20;
-      color: #c8a84a;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
+      min-width: 80px;
     }
 
     a { color: var(--link); text-decoration: none; }
@@ -275,96 +170,29 @@
 </header>
 
 <main>
+  <div class="year-grid">
 
-  <!-- 2026 -->
-  <div class="year-section">
-    <div class="year-header">
-      <h2>2026</h2>
-      <span class="year-sub">Fredag 29. mai</span>
-      <span class="pending-badge">Ikke utfylt ennå</span>
-    </div>
+    <a href="festivallogg-2026.html" class="year-card">
+      <div class="year-num">2026</div>
+      <div class="year-date">Fredag 30. – lørdag 31. mai</div>
+      <ul class="year-facts">
+        <li><span>Deltakere</span> Pål, Jarle, Jon, Kristian, Marius</li>
+        <li><span>Fangst</span> ca. 25–30 gjedder</li>
+        <li><span>Størst</span> Jon, ~4 kg</li>
+        <li><span>Bilder</span> 26 stk.</li>
+      </ul>
+    </a>
 
-    <div class="meta-grid">
-      <div class="meta-item">
-        <div class="label">Dato</div>
-        <div class="value">Fredag 29. mai 2026</div>
-      </div>
-      <div class="meta-item">
-        <div class="label">Deltakere</div>
-        <div class="value placeholder">—</div>
-      </div>
-      <div class="meta-item">
-        <div class="label">Vinner</div>
-        <div class="value placeholder">—</div>
-      </div>
-      <div class="meta-item">
-        <div class="label">Rekord denne dagen</div>
-        <div class="value placeholder">—</div>
-      </div>
-    </div>
+    <a href="festivallogg-2011.html" class="year-card">
+      <div class="year-num">2011</div>
+      <div class="year-date">Søndag 10. mars</div>
+      <ul class="year-facts">
+        <li><span>Kilde</span> Håndskrevet rapport</li>
+        <li><span>Signert</span> Pst. Asbjørn</li>
+      </ul>
+    </a>
 
-    <h3>Fangst</h3>
-    <table>
-      <thead>
-        <tr><th>Fisker</th><th>Størst gjedde</th><th>Antall</th></tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="3" style="color:var(--text-muted);font-style:italic;">Fylles inn etter festivalen</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Historier og hendelser</h3>
-    <p style="color:var(--text-muted);font-style:italic;">Fylles inn etter festivalen.</p>
   </div>
-
-  <hr style="border:none;border-top:1px solid var(--border);margin:2rem 0;">
-
-  <!-- 2011 -->
-  <div class="year-section">
-    <div class="year-header">
-      <h2>2011</h2>
-      <span class="year-sub">Søndag 10. mars</span>
-    </div>
-
-    <div class="meta-grid">
-      <div class="meta-item">
-        <div class="label">Dato</div>
-        <div class="value">Søndag 10. mars 2011</div>
-      </div>
-      <div class="meta-item">
-        <div class="label">Signert</div>
-        <div class="value">Pst. Asbjørn</div>
-      </div>
-    </div>
-
-    <h3>Rapport</h3>
-    <div class="report">
-      <div class="transcription-note">
-        Transkribert fra håndskrevet kilde. Usikre passasjer er merket med <em>[?]</em>.
-      </div>
-      <div class="report-body">
-
-        <p>Det er en god eller to store fordeler med å <span class="uncertain">[?]</span> til <span class="uncertain">[?]</span> <span class="uncertain">[første linje delvis uleselig]</span></p>
-
-        <p>Vi måtte flytte nær inn i de <span class="uncertain">[?]</span>. Godt alle arbeidet for <span class="uncertain">[?]</span> Morton Hartøy, Christin og <span class="uncertain">[?]</span> DOCTOR Jan Petter Dorset<span class="uncertain">[?]</span>. Skulle gjøre gode inntrykk, ville se tilbakemeldingene, ekspektansen, <span class="uncertain">[?]</span> til viktige <span class="uncertain">[?]</span>. Fra <span class="uncertain">[?]</span> vi håpet å <span class="uncertain">[?]</span> for en fire med <span class="uncertain">[?]</span>, sikre om forsikringen <span class="uncertain">[?]</span> for ved lands beretning. Båtgruppe fra 200 til deltakelse på <span class="uncertain">[?]</span>, lavere av <span class="uncertain">[?]</span> om vi hadde i praktikum<span class="uncertain">[?]</span>.</p>
-
-        <p>Eller er <span class="uncertain">[?]</span> helseforbund det bel med til slutte<span class="uncertain">[?]</span>, hvem ansatt oppe og meg <span class="uncertain">[?]</span> ... Det opp begge å for<span class="uncertain">[?]</span> <span class="uncertain">[?]</span> km i tinn island at vil nervet. Det <span class="uncertain">[?]</span> strong nok om <span class="uncertain">[?]</span> 49 eller hjelpen <span class="uncertain">[?]</span>. Vi valte med gjentegalspersonen<span class="uncertain">[?]</span>. Dog fylt<span class="uncertain">[?]</span> som hadde en aldri. Mordag<span class="uncertain">[?]</span> — et nyhel<span class="uncertain">[?]</span> til mellift<span class="uncertain">[?]</span>.</p>
-
-        <p>Sommerskap erindret og i tiltur påhaldige<span class="uncertain">[?]</span> fant. Dog hadde jeg for <span class="uncertain">[?]</span> om å like distrikt. Skulle nok lukke at <span class="uncertain">[?]</span> om til oppser om<span class="uncertain">[?]</span> den fylt serverne andrer, noen vel forhøre bli <span class="uncertain">[?]</span>, det tillstedt broesersen<span class="uncertain">[?]</span>. De måtte noen øve, de hadde å del stierne<span class="uncertain">[?]</span>. Nordmenn, <span class="uncertain">[?]</span> angle ved alminde <span class="uncertain">[?]</span> til de hadde og med ham godt er og aldrer.</p>
-
-        <p>Det vare både order felt å dele ot<span class="uncertain">[?]</span> til en brukte historier, tanket og forsøkningsfelt med idrettsted. For Langstleg<span class="uncertain">[?]</span> nemmelsene verkom er å myldet<span class="uncertain">[?]</span>. Sambre, sykte, skullet no undelig oppstarter å 6 til tror minimum det residen son<span class="uncertain">[?]</span> ...</p>
-
-        <blockquote>«la det figure i<span class="uncertain">[?]</span> punkt for noe den til solvighed<span class="uncertain">[?]</span> som i mer hendlet de øss»</blockquote>
-
-        <p>Markerand — innste gy ro. Dittrige<span class="uncertain">[?]</span> ble foil til del over Grenland og — handlet nearer sol<span class="uncertain">[?]</span> ekstra. Det sine folkene, det forbunde, og det var som øftersteene<span class="uncertain">[?]</span>. Ti brukte piltne og brukte en tankmenn var enkel. Dette og drøpet bute er idrettsted til holke<span class="uncertain">[?]</span> til hytlen<span class="uncertain">[?]</span>, bare om atter to som bred fulste på <span class="uncertain">[?]</span>, hans bil ende<span class="uncertain">[?]</span>.</p>
-
-        <p>I dag valmer<span class="uncertain">[?]</span> jeg tilbake om all skapel<span class="uncertain">[?]</span> til sold endte, jo jeg endlet<span class="uncertain">[?]</span> på verst la rente. Slamsen<span class="uncertain">[?]</span> og Skimmern<span class="uncertain">[?]</span>. Psykologisk var dette. Hjørrets<span class="uncertain">[?]</span> å er at vi fulde<span class="uncertain">[?]</span> for broerserm<span class="uncertain">[?]</span>. Et med enn gjelds tillede med en servire<span class="uncertain">[?]</span>. Som forst<span class="uncertain">[?]</span> om til bilerne<span class="uncertain">[?]</span> — Alter<span class="uncertain">[?]</span> for forfall — at fisble<span class="uncertain">[?]</span> alter til maner godtar, trikk slik gjøret nok til å seg. I aldrig<span class="uncertain">[?]</span>, nær OK alternativ. Grønnjys<span class="uncertain">[?]</span> forslike<span class="uncertain">[?]</span> bergjelserne verst løver stein.</p>
-
-        <p class="signature">— Pst. Asbjørn</p>
-      </div>
-    </div>
-  </div>
-
 </main>
 
 <footer>

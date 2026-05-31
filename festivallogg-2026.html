@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gjeddefestivalen 2026 — Borrevannet</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1a14;
+      --surface: #162010;
+      --surface2: #1d2b1a;
+      --border: #2e4028;
+      --accent: #5a8f4a;
+      --accent-light: #7ab868;
+      --text: #d6e8cf;
+      --text-muted: #7a9970;
+      --heading: #e8f5e1;
+      --link: #7ab868;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 54px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent-light);
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--accent-light); border-bottom-color: var(--accent-light); }
+
+    header {
+      background: linear-gradient(160deg, #162b1a 0%, #0f1f13 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--heading);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+    }
+
+    .back-link:hover { color: var(--text); text-decoration: none; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+    }
+
+    .meta-item .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-item .value {
+      color: var(--heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.93rem;
+    }
+
+    th {
+      background: var(--surface2);
+      color: var(--accent-light);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      padding: 0.55rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+    h3 {
+      font-size: 1rem;
+      color: var(--accent-light);
+      font-weight: 600;
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    p { margin-bottom: 0.9rem; color: var(--text); }
+
+    ul.story-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    ul.story-list li {
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    ul.story-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 6px;
+      margin-top: 0.8rem;
+    }
+
+    .photo-grid a {
+      display: block;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .photo-grid a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Borrevannet</a>
+  <a href="index.html">Om vannet</a>
+  <a href="gjeddefiske.html">Gjeddefiske &amp; festival</a>
+  <a href="festivallogg.html" class="active">Festivallogg</a>
+</nav>
+
+<header>
+  <h1>Gjeddefestivalen 2026</h1>
+  <p>Fredag 30. – lørdag 31. mai &nbsp;·&nbsp; Borrevannet</p>
+</header>
+
+<main>
+
+  <a href="festivallogg.html" class="back-link">&#8592; Alle festivaler</a>
+
+  <div class="meta-grid">
+    <div class="meta-item">
+      <div class="label">Dato</div>
+      <div class="value">30.–31. mai 2026</div>
+    </div>
+    <div class="meta-item">
+      <div class="label">Deltakere</div>
+      <div class="value">5 — Pål, Jarle, Jon, Kristian, Marius</div>
+    </div>
+    <div class="meta-item">
+      <div class="label">Båter</div>
+      <div class="value">2 (lån fra Natursenteret)</div>
+    </div>
+    <div class="meta-item">
+      <div class="label">Totalt fangst</div>
+      <div class="value">ca. 25–30 gjedder</div>
+    </div>
+  </div>
+
+  <h3>Tidslinje</h3>
+  <table>
+    <thead>
+      <tr><th>Tidspunkt</th><th>Hendelse</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Fredag ~10.00</td><td>Jon og Jarle starter fiske</td></tr>
+      <tr><td>Fredag ettermiddag</td><td>Kristian, Marius og Pål ankommer</td></tr>
+      <tr><td>Lørdag 13.00</td><td>Kristian, Marius og Pål avslutter</td></tr>
+      <tr><td>Lørdag ~15.00</td><td>Jon og Jarle avslutter</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Fangst</h3>
+  <table>
+    <thead>
+      <tr><th>Fisker</th><th>Størst gjedde</th><th>Merknad</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Jon</td><td>~4 kg</td><td>Fikk de to største</td></tr>
+      <tr><td>Kristian</td><td>~3,5 kg</td><td>Nesten alle på Storauren kobber</td></tr>
+      <tr><td>Jarle</td><td>—</td><td>Fikk fisk</td></tr>
+      <tr><td>Marius</td><td>—</td><td>Fikk fisk</td></tr>
+      <tr><td>Pål</td><td>—</td><td>Roer — fisket ikke</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.88rem;color:var(--text-muted);">Agn som funket: jigg, popper, Storauren kobber</p>
+
+  <h3>Forhold</h3>
+  <table>
+    <thead>
+      <tr><th></th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Vanntemperatur</td><td>ca. 14–16 °C — optimalt tidspunkt, lite groing</td></tr>
+      <tr><td>Fredag</td><td>En del vind fra sør</td></tr>
+      <tr><td>Lørdag</td><td>Nesten vindstille, sol, ca. 20 °C</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Meyer</h3>
+  <table>
+    <thead>
+      <tr><th>Spiller</th><th>Runder vunnet</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Marius</td><td>3</td></tr>
+      <tr><td>Kristian</td><td>2</td></tr>
+      <tr><td>Øvrige</td><td>0</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Historier og hendelser</h3>
+  <ul class="story-list">
+    <li>Grillet biff og pølser</li>
+    <li>Kristian sov ute i hengekøye</li>
+    <li>Jon sloknet først</li>
+  </ul>
+
+  <h3>Bilder</h3>
+  <div class="photo-grid">
+    <a href="bilder/2026/web/IMG_9382.jpg" target="_blank"><img src="bilder/2026/web/IMG_9382.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9425.jpg" target="_blank"><img src="bilder/2026/web/IMG_9425.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9426.jpg" target="_blank"><img src="bilder/2026/web/IMG_9426.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9427.jpg" target="_blank"><img src="bilder/2026/web/IMG_9427.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9428.jpg" target="_blank"><img src="bilder/2026/web/IMG_9428.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9429.jpg" target="_blank"><img src="bilder/2026/web/IMG_9429.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9437.jpg" target="_blank"><img src="bilder/2026/web/IMG_9437.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9446.jpg" target="_blank"><img src="bilder/2026/web/IMG_9446.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/IMG_9448.jpg" target="_blank"><img src="bilder/2026/web/IMG_9448.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/7B7CB5BAB2D8FE4D1F062E37BAD6F729.jpg" target="_blank"><img src="bilder/2026/web/7B7CB5BAB2D8FE4D1F062E37BAD6F729.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/8A07090B7394F52F1F32CB449A01DB84.jpg" target="_blank"><img src="bilder/2026/web/8A07090B7394F52F1F32CB449A01DB84.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/8C317353B2E18F623D207C2FF4BB6B9B.jpg" target="_blank"><img src="bilder/2026/web/8C317353B2E18F623D207C2FF4BB6B9B.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/96802F99D30737BCEA57CF5C8E0AAF5C.jpg" target="_blank"><img src="bilder/2026/web/96802F99D30737BCEA57CF5C8E0AAF5C.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/AF963999804DDCB4D523ABE367176D67.jpg" target="_blank"><img src="bilder/2026/web/AF963999804DDCB4D523ABE367176D67.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/B6F3CE417B69B3929CE75F1276BF85FF.jpg" target="_blank"><img src="bilder/2026/web/B6F3CE417B69B3929CE75F1276BF85FF.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/E6220E18FB28FAD37670BDBB026F049F.jpg" target="_blank"><img src="bilder/2026/web/E6220E18FB28FAD37670BDBB026F049F.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/FDF7E41C26A758CB5EC67F9C5E12320A.jpg" target="_blank"><img src="bilder/2026/web/FDF7E41C26A758CB5EC67F9C5E12320A.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/cc7a9520b5d898ce942d28cf338c29cf.jpeg" target="_blank"><img src="bilder/2026/web/cc7a9520b5d898ce942d28cf338c29cf.jpeg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/688424748_4609876275953577_3747933405264698614_n.jpg" target="_blank"><img src="bilder/2026/web/688424748_4609876275953577_3747933405264698614_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/705646977_857522410151022_511548412699991283_n.jpg" target="_blank"><img src="bilder/2026/web/705646977_857522410151022_511548412699991283_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/706015865_1461285165321331_2714403889180476394_n.jpg" target="_blank"><img src="bilder/2026/web/706015865_1461285165321331_2714403889180476394_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/706663242_1006542998729385_2255615733411171623_n.jpg" target="_blank"><img src="bilder/2026/web/706663242_1006542998729385_2255615733411171623_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/707187550_1665890258079630_7155192594549542730_n.jpg" target="_blank"><img src="bilder/2026/web/707187550_1665890258079630_7155192594549542730_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/708752716_830011106854066_507261560861423216_n.jpg" target="_blank"><img src="bilder/2026/web/708752716_830011106854066_507261560861423216_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/708832717_971247935668291_8467562654413707358_n.jpg" target="_blank"><img src="bilder/2026/web/708832717_971247935668291_8467562654413707358_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+    <a href="bilder/2026/web/710868000_2244310832773280_4731530966060751638_n.jpg" target="_blank"><img src="bilder/2026/web/710868000_2244310832773280_4731530966060751638_n.jpg" alt="Gjeddefestivalen 2026" loading="lazy"></a>
+  </div>
+
+</main>
+
+<footer>
+  Borrevannet, Horten — Vestfold
+</footer>
+
+</body>
+</html>
