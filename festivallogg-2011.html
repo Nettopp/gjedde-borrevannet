@@ -226,6 +226,30 @@
     .wx-stats-wrap table { font-size: 0.82rem; margin: 0; }
     .wx-stats-wrap th { font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .wx-stats-wrap td { padding: 0.4rem 0.6rem; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 0.8rem;
+    }
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .photo-grid a { display: block; aspect-ratio: 4/3; overflow: hidden; }
+    .photo-grid img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.2s, opacity 0.2s; display: block;
+    }
+    .photo-grid a:hover img { transform: scale(1.04); opacity: 0.9; }
+    .photo-grid figcaption {
+      padding: 0.35rem 0.6rem 0.45rem;
+      font-size: 0.78rem; color: var(--text-muted); line-height: 1.35;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
@@ -240,7 +264,7 @@
 
 <header>
   <h1>Gjeddefestivalen 2011</h1>
-  <p>Søndag 10. mars &nbsp;·&nbsp; Borrevannet</p>
+  <p>13.–14. mai &nbsp;·&nbsp; Borrevannet</p>
 </header>
 
 <main>
@@ -250,7 +274,7 @@
   <div class="meta-grid">
     <div class="meta-item">
       <div class="label">Dato</div>
-      <div class="value">Søndag 10. mars 2011</div>
+      <div class="value">13.–14. mai 2011</div>
     </div>
     <div class="meta-item">
       <div class="label">Kilde</div>
@@ -262,7 +286,7 @@
     </div>
   </div>
 
-  <h3>Timevis vær — 10. mars</h3>
+  <h3>Timevis vær — 13.–14. mai</h3>
   <div class="weather-widget">
     <p class="wx-loading" id="wx-loading">Henter historiske værdata fra Borrevannet…</p>
     <p class="wx-error" id="wx-error" style="display:none"></p>
@@ -306,6 +330,66 @@
     </div>
   </div>
 
+  <h3>Bilder</h3>
+  <div class="photo-grid">
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-001.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-001.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-002.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-002.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-003.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-003.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-004.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-004.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-005.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-005.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-006.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-006.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-007.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-007.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-008.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-008.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-009.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-009.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-010.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-010.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="bilder/2011/web/festivalbilde-011.jpg" target="_blank"><img src="bilder/2011/web/festivalbilde-011.jpg" alt="Gjeddefestivalen 2011." loading="lazy"></a>
+      <figcaption>Gjeddefestivalen 2011.</figcaption>
+    </figure>
+
+  </div>
+
 </main>
 
 <footer>
@@ -314,201 +398,177 @@
 
 <script>
 (function () {
-  const LAT = 59.4119, LON = 10.4677;
-  const GRID = 'rgba(46,64,40,0.55)', MUTED = '#7a9970', FG = '#d6e8cf';
-  const NO_DAYS_F = ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'];
-  const NO_MON = ['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
+  var LAT = 59.4119, LON = 10.4677;
+  var START = '2011-05-13', END = '2011-05-14';
+  var MULTIDAY = START !== END;
+  var GRID = 'rgba(46,64,40,0.55)', MUTED = '#7a9970', FG = '#d6e8cf';
+  var NO_DAYS_S = ['sø','ma','ti','on','to','fr','lø'];
+  var NO_DAYS_F = ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'];
+  var NO_MON   = ['januar','februar','mars','april','mai','juni',
+                  'juli','august','september','oktober','november','desember'];
 
-  const tooltipDefaults = {
-    backgroundColor: '#1d2b1a',
-    borderColor: '#2e4028',
-    borderWidth: 1,
-    titleColor: '#e8f5e1',
-    bodyColor: FG,
-    padding: 8,
+  var TT = {
+    backgroundColor: '#1d2b1a', borderColor: '#2e4028', borderWidth: 1,
+    titleColor: '#e8f5e1', bodyColor: FG, padding: 8
   };
 
-  async function loadWeather() {
-    const url = 'https://archive-api.open-meteo.com/v1/archive' +
-      '?latitude=' + LAT + '&longitude=' + LON +
-      '&start_date=2011-03-10&end_date=2011-03-10' +
-      '&hourly=temperature_2m,precipitation,windspeed_10m,cloudcover' +
-      '&timezone=Europe%2FOslo&wind_speed_unit=ms';
-
-    const resp = await fetch(url);
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    const data = await resp.json();
-    if (data.error) throw new Error(data.reason || 'API-feil');
-    return data;
+  function makeLabel(t) {
+    var d = new Date(t);
+    var hh = String(d.getHours()).padStart(2, '0') + ':00';
+    return MULTIDAY ? NO_DAYS_S[d.getDay()] + ' ' + hh : hh;
   }
 
   function avg(arr) {
-    return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null;
+    return arr.length ? arr.reduce(function (a, b) { return a + b; }, 0) / arr.length : null;
   }
 
   function buildStats(h) {
-    const byDay = {};
-    h.time.forEach((t, i) => {
-      const day = t.slice(0, 10);
+    var byDay = {};
+    h.time.forEach(function (t, i) {
+      var day = t.slice(0, 10);
       if (!byDay[day]) byDay[day] = { temp: [], precip: [], wind: [], cloud: [] };
       if (h.temperature_2m[i] !== null) byDay[day].temp.push(h.temperature_2m[i]);
       if (h.precipitation[i]  !== null) byDay[day].precip.push(h.precipitation[i]);
       if (h.windspeed_10m[i]  !== null) byDay[day].wind.push(h.windspeed_10m[i]);
       if (h.cloudcover[i]     !== null) byDay[day].cloud.push(h.cloudcover[i]);
     });
-    const f1 = v => v !== null ? v.toFixed(1) : '—';
-    const f0 = v => v !== null ? Math.round(v).toString() : '—';
-    const rows = Object.entries(byDay).map(([day, d]) => {
-      const dt    = new Date(day + 'T12:00:00');
-      const label = NO_DAYS_F[dt.getDay()] + ' ' + dt.getDate() + '. ' + NO_MON[dt.getMonth()];
-      const tMax  = d.temp.length  ? Math.max(...d.temp)  : null;
-      const tMin  = d.temp.length  ? Math.min(...d.temp)  : null;
-      const tAvg  = avg(d.temp);
-      const rain  = d.precip.length ? d.precip.reduce((a, b) => a + b, 0) : null;
-      const wMax  = d.wind.length  ? Math.max(...d.wind)  : null;
-      const cAvg  = avg(d.cloud);
-      const sunH  = d.cloud.filter(c => c < 30).length;
-      return `<tr><td>${label}</td><td>${f1(tMax)}</td><td>${f1(tMin)}</td>`
-        + `<td>${f1(tAvg)}</td><td>${f1(rain)}</td><td>${f1(wMax)}</td>`
-        + `<td>${f0(cAvg)} %</td><td>${sunH}</td></tr>`;
+    function f1(v) { return v !== null ? v.toFixed(1) : '—'; }
+    function f0(v) { return v !== null ? Math.round(v).toString() : '—'; }
+    var rows = Object.entries(byDay).map(function (entry) {
+      var day = entry[0], d = entry[1];
+      var dt = new Date(day + 'T12:00:00');
+      var label = NO_DAYS_F[dt.getDay()] + ' ' + dt.getDate() + '. ' + NO_MON[dt.getMonth()];
+      var tMax = d.temp.length  ? Math.max.apply(null, d.temp)  : null;
+      var tMin = d.temp.length  ? Math.min.apply(null, d.temp)  : null;
+      var tAvg = avg(d.temp);
+      var rain = d.precip.length ? d.precip.reduce(function (a, b) { return a + b; }, 0) : null;
+      var wMax = d.wind.length  ? Math.max.apply(null, d.wind)  : null;
+      var cAvg = avg(d.cloud);
+      var sunH = d.cloud.filter(function (c) { return c < 30; }).length;
+      return '<tr><td>' + label + '</td>'
+        + '<td>' + f1(tMax) + '</td><td>' + f1(tMin) + '</td>'
+        + '<td>' + f1(tAvg) + '</td><td>' + f1(rain) + '</td>'
+        + '<td>' + f1(wMax) + '</td><td>' + f0(cAvg) + ' %</td>'
+        + '<td>' + sunH + '</td></tr>';
     });
     return '<div class="wx-stats-wrap"><table>'
-      + '<thead><tr><th>Dag</th><th>Maks °C</th><th>Min °C</th>'
-      + '<th>Gj.snitt °C</th><th>Nedbør mm</th>'
-      + '<th>Maks vind m/s</th><th>Skydekke</th><th>Soltimer¹</th>'
+      + '<thead><tr><th>Dag</th><th>Maks °C</th><th>Min °C</th>'
+      + '<th>Gj.snitt °C</th><th>Nedbør mm</th>'
+      + '<th>Maks vind m/s</th><th>Skydekke</th><th>Soltimer¹</th>'
       + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'
       + '<p class="wx-source" style="margin-top:4px">'
-      + '¹ Timer med skydekke under 30 %'
+      + '¹ Timer med skydekke under 30 %'
       + ' · Kilde: Open-Meteo / ERA5 · Borrevannet, Horten</p>';
   }
 
   function buildCharts(data) {
-    const h = data.hourly;
-    const idx = h.time.map((t, i) => i);
-
-    const labels = idx.map(i => String(new Date(h.time[i]).getHours()).padStart(2, '0') + ':00');
-    const temp   = idx.map(i => h.temperature_2m[i]);
-    const wind   = idx.map(i => h.windspeed_10m[i]);
-    const precip = idx.map(i => h.precipitation[i]);
-    const cloud  = idx.map(i => h.cloudcover[i]);
+    var h = data.hourly;
+    var labels = h.time.map(makeLabel);
 
     new Chart(document.getElementById('wx-temp'), {
       type: 'line',
       data: {
-        labels,
+        labels: labels,
         datasets: [
           {
             label: 'Temperatur (°C)',
-            data: temp,
-            borderColor: '#7ab868',
-            backgroundColor: 'rgba(122,184,104,0.13)',
-            borderWidth: 2,
-            pointRadius: 2,
-            pointHoverRadius: 4,
-            fill: true,
-            tension: 0.35,
-            yAxisID: 'yT',
-            order: 1,
+            data: h.temperature_2m,
+            borderColor: '#7ab868', backgroundColor: 'rgba(122,184,104,0.13)',
+            borderWidth: 2, pointRadius: 2, pointHoverRadius: 4,
+            fill: true, tension: 0.35, yAxisID: 'yT', order: 1
           },
           {
             label: 'Skydekke (%)',
-            data: cloud,
-            borderColor: 'rgba(160,165,185,0.35)',
-            backgroundColor: 'rgba(120,130,155,0.1)',
-            borderWidth: 1,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3,
-            yAxisID: 'yC',
-            order: 2,
-          },
-        ],
+            data: h.cloudcover,
+            borderColor: 'rgba(160,165,185,0.35)', backgroundColor: 'rgba(120,130,155,0.1)',
+            borderWidth: 1, pointRadius: 0, fill: true, tension: 0.3, yAxisID: 'yC', order: 2
+          }
+        ]
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
+        responsive: true, maintainAspectRatio: false,
         plugins: {
           legend: { labels: { color: FG, boxWidth: 12, font: { size: 11 } } },
-          tooltip: tooltipDefaults,
+          tooltip: TT
         },
         scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED, maxTicksLimit: 16, font: { size: 10 } } },
+          x: { grid: { color: GRID }, ticks: { color: MUTED, maxTicksLimit: 12, font: { size: 10 } } },
           yT: {
             type: 'linear', position: 'left',
             title: { display: true, text: '°C', color: MUTED, font: { size: 11 } },
-            grid: { color: GRID },
-            ticks: { color: MUTED, font: { size: 10 } },
+            grid: { color: GRID }, ticks: { color: MUTED, font: { size: 10 } }
           },
           yC: {
-            type: 'linear', position: 'right',
-            min: 0, max: 100,
-            title: { display: true, text: 'skyer %', color: MUTED, font: { size: 11 } },
+            type: 'linear', position: 'right', min: 0, max: 100,
+            title: { display: true, text: 'skyer %', color: MUTED, font: { size: 11 } },
             grid: { display: false },
-            ticks: { color: MUTED, font: { size: 10 }, stepSize: 25, callback: v => v + '%' },
-          },
-        },
-      },
+            ticks: { color: MUTED, font: { size: 10 }, stepSize: 25,
+                     callback: function (v) { return v + '%'; } }
+          }
+        }
+      }
     });
 
     new Chart(document.getElementById('wx-wind'), {
       type: 'bar',
       data: {
-        labels,
+        labels: labels,
         datasets: [
           {
             label: 'Vind (m/s)',
-            data: wind,
+            data: h.windspeed_10m,
             type: 'line',
-            borderColor: '#5599dd',
-            backgroundColor: 'rgba(85,153,221,0.08)',
-            borderWidth: 2,
-            pointRadius: 2,
-            pointHoverRadius: 4,
-            fill: false,
-            tension: 0.3,
-            yAxisID: 'yW',
-            order: 1,
+            borderColor: '#5599dd', backgroundColor: 'rgba(85,153,221,0.08)',
+            borderWidth: 2, pointRadius: 2, pointHoverRadius: 4,
+            fill: false, tension: 0.3, yAxisID: 'yW', order: 1
           },
           {
             label: 'Nedbør (mm)',
-            data: precip,
+            data: h.precipitation,
             type: 'bar',
-            backgroundColor: 'rgba(85,153,221,0.5)',
-            borderColor: 'rgba(85,153,221,0.75)',
-            borderWidth: 0,
-            yAxisID: 'yP',
-            order: 2,
-          },
-        ],
+            backgroundColor: 'rgba(85,153,221,0.5)', borderColor: 'rgba(85,153,221,0.75)',
+            borderWidth: 0, yAxisID: 'yP', order: 2
+          }
+        ]
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
+        responsive: true, maintainAspectRatio: false,
         plugins: {
           legend: { labels: { color: FG, boxWidth: 12, font: { size: 11 } } },
-          tooltip: tooltipDefaults,
+          tooltip: TT
         },
         scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED, maxTicksLimit: 16, font: { size: 10 } } },
+          x: { grid: { color: GRID }, ticks: { color: MUTED, maxTicksLimit: 12, font: { size: 10 } } },
           yW: {
             type: 'linear', position: 'left', min: 0,
             title: { display: true, text: 'm/s', color: MUTED, font: { size: 11 } },
-            grid: { color: GRID },
-            ticks: { color: MUTED, font: { size: 10 } },
+            grid: { color: GRID }, ticks: { color: MUTED, font: { size: 10 } }
           },
           yP: {
             type: 'linear', position: 'right', min: 0,
             title: { display: true, text: 'mm', color: MUTED, font: { size: 11 } },
-            grid: { display: false },
-            ticks: { color: MUTED, font: { size: 10 } },
-          },
-        },
-      },
+            grid: { display: false }, ticks: { color: MUTED, font: { size: 10 } }
+          }
+        }
+      }
     });
 
     document.getElementById('wx-stats').innerHTML = buildStats(h);
     document.getElementById('wx-loading').style.display = 'none';
     document.getElementById('wx-content').style.display = 'block';
+  }
+
+  async function loadWeather() {
+    var url = 'https://archive-api.open-meteo.com/v1/archive'
+      + '?latitude=' + LAT + '&longitude=' + LON
+      + '&start_date=' + START + '&end_date=' + END
+      + '&hourly=temperature_2m,precipitation,windspeed_10m,cloudcover'
+      + '&timezone=Europe%2FOslo&wind_speed_unit=ms';
+    var resp = await fetch(url);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    var data = await resp.json();
+    if (data.error) throw new Error(data.reason || 'API-feil');
+    return data;
   }
 
   loadWeather()
